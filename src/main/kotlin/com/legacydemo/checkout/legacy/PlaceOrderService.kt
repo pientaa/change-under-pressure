@@ -30,8 +30,16 @@ class PlaceOrderService(
             order.basePrice
         }
 
-        // --- determine priority (simple baseline) ---
+        // --- determine priority ---
         order.priority = order.vip
+        // Point X: VIP + PARTNER2026 + high value + non-economy => priority
+        if (order.vip
+            && order.campaignCode == "PARTNER2026"
+            && order.finalPrice >= Money("100.00")
+            && order.shippingMethod != com.legacydemo.shared.ShippingMethod.ECONOMY
+        ) {
+            order.priority = true
+        }
 
         // --- assign warehouse ---
         order.warehouseId = if (order.priority) "WH-PRIORITY" else "WH-STANDARD"
