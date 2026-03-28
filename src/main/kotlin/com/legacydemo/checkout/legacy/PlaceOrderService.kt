@@ -32,6 +32,7 @@ class PlaceOrderService(
         // --- determine priority (via Fulfillment Team API) ---
         val priorityInput = PriorityInput(
             vip = order.vip,
+            segment = order.segment,
             campaignCode = order.campaignCode,
             finalPrice = order.finalPrice,
             shippingMethod = order.shippingMethod
