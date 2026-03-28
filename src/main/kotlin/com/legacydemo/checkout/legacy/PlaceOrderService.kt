@@ -1,10 +1,10 @@
 package com.legacydemo.checkout.legacy
 
+import com.legacydemo.acl.OrderToPricingCommandMapper
+import com.legacydemo.acl.OrderToPriorityInputMapper
 import com.legacydemo.customer.CustomerProfileService
 import com.legacydemo.fulfillment.FulfillmentApi
-import com.legacydemo.fulfillment.PriorityInput
 import com.legacydemo.pricing.PricingApi
-import com.legacydemo.pricing.PricingCommand
 import com.legacydemo.repo.OrderRepository
 import com.legacydemo.shared.OrderStatus
 
@@ -21,22 +21,13 @@ class PlaceOrderService(
         order.vip = profile.vip
         order.segment = profile.segment
 
-        // --- calculate pricing (via Pricing Team API) ---
-        val pricingCommand = PricingCommand(
-            basePrice = order.basePrice,
-            campaignCode = order.campaignCode
-        )
+        // --- calculate pricing (via ACL + Pricing Team API) ---
+        val pricingCommand = OrderToPricingCommandMapper.map(order)
         val pricingResult = pricingApi.calculate(pricingCommand)
         order.finalPrice = pricingResult.finalPrice
 
-        // --- determine priority (via Fulfillment Team API) ---
-        val priorityInput = PriorityInput(
-            vip = order.vip,
-            segment = order.segment,
-            campaignCode = order.campaignCode,
-            finalPrice = order.finalPrice,
-            shippingMethod = order.shippingMethod
-        )
+        // --- determine priority (via ACL + Fulfillment Team API) ---
+        val priorityInput = OrderToPriorityInputMapper.map(order)
         val decision = fulfillmentApi.determinePriority(priorityInput)
         order.priority = decision.priority
 
