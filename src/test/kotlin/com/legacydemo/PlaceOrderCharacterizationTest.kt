@@ -1,14 +1,13 @@
 package com.legacydemo
 
-import com.legacydemo.campaign.Campaign
 import com.legacydemo.campaign.CampaignCatalog
-import com.legacydemo.campaign.CampaignCode
 import com.legacydemo.checkout.legacy.Order
 import com.legacydemo.checkout.legacy.PlaceOrderService
 import com.legacydemo.customer.CustomerProfile
 import com.legacydemo.customer.CustomerProfileService
 import com.legacydemo.customer.Segment
 import com.legacydemo.fulfillment.PriorityService
+import com.legacydemo.pricing.PricingService
 import com.legacydemo.repo.OrderRepository
 import com.legacydemo.shared.Money
 import com.legacydemo.shared.ShippingMethod
@@ -25,7 +24,7 @@ class PlaceOrderCharacterizationTest : FunSpec({
         val profileMap = profiles.associateBy { it.customerId }
         return PlaceOrderService(
             customerProfileService = CustomerProfileService(profileMap),
-            campaignCatalog = CampaignCatalog.withDefaults(),
+            pricingApi = PricingService(CampaignCatalog.withDefaults()),
             fulfillmentApi = PriorityService(),
             orderRepository = OrderRepository()
         )
