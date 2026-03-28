@@ -8,6 +8,7 @@ import com.legacydemo.checkout.legacy.PlaceOrderService
 import com.legacydemo.customer.CustomerProfile
 import com.legacydemo.customer.CustomerProfileService
 import com.legacydemo.customer.Segment
+import com.legacydemo.fulfillment.PriorityService
 import com.legacydemo.repo.OrderRepository
 import com.legacydemo.shared.Money
 import com.legacydemo.shared.ShippingMethod
@@ -25,6 +26,7 @@ class PlaceOrderCharacterizationTest : FunSpec({
         return PlaceOrderService(
             customerProfileService = CustomerProfileService(profileMap),
             campaignCatalog = CampaignCatalog.withDefaults(),
+            fulfillmentApi = PriorityService(),
             orderRepository = OrderRepository()
         )
     }
