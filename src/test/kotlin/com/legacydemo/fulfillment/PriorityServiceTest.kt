@@ -53,5 +53,49 @@ class PriorityServiceTest : FunSpec({
         )
         service.determinePriority(input).priority shouldBe true
     }
+
+    test("GOLD segment + PARTNER2026 + above gold threshold + EXPRESS => priority (lower threshold)") {
+        val input = PriorityInput(
+            vip = false,
+            segment = Segment.GOLD,
+            campaignCode = "PARTNER2026",
+            finalPrice = Money("60.00"),
+            shippingMethod = ShippingMethod.EXPRESS
+        )
+        service.determinePriority(input).priority shouldBe true
+    }
+
+    test("GOLD segment + PARTNER2026 + below gold threshold => no priority") {
+        val input = PriorityInput(
+            vip = false,
+            segment = Segment.GOLD,
+            campaignCode = "PARTNER2026",
+            finalPrice = Money("30.00"),
+            shippingMethod = ShippingMethod.EXPRESS
+        )
+        service.determinePriority(input).priority shouldBe false
+    }
+
+    test("GOLD segment + PARTNER2026 + above gold threshold + ECONOMY => no priority") {
+        val input = PriorityInput(
+            vip = false,
+            segment = Segment.GOLD,
+            campaignCode = "PARTNER2026",
+            finalPrice = Money("60.00"),
+            shippingMethod = ShippingMethod.ECONOMY
+        )
+        service.determinePriority(input).priority shouldBe false
+    }
+
+    test("SILVER segment + PARTNER2026 + between thresholds => no priority (standard threshold applies)") {
+        val input = PriorityInput(
+            vip = false,
+            segment = Segment.SILVER,
+            campaignCode = "PARTNER2026",
+            finalPrice = Money("60.00"),
+            shippingMethod = ShippingMethod.EXPRESS
+        )
+        service.determinePriority(input).priority shouldBe false
+    }
 })
 

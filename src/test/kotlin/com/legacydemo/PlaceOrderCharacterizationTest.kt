@@ -65,7 +65,7 @@ class PlaceOrderCharacterizationTest : FunSpec({
         result.warehouseId shouldBe "WH-PRIORITY"
     }
 
-    test("non-VIP + PARTNER2026 => priority false") {
+    test("non-VIP + STANDARD + PARTNER2026 => priority false") {
         val service = buildService(regularProfile)
         val order = Order(
             id = "O-3",
