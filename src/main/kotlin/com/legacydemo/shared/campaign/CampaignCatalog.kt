@@ -1,4 +1,4 @@
-package com.legacydemo.campaign
+package com.legacydemo.shared.campaign
 
 import java.math.BigDecimal
 
