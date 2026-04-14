@@ -1980,7 +1980,7 @@
 
   <span class="kw">fun</span> <span class="fn">add</span>(code: <span class="tp">CampaignCode</span>, c: <span class="tp">Campaign</span>) { campaigns[code] = c }
 
-  <span class="kw">override fun</span> <span class="fn">findCampaign</span>(code: <span class="tp">CampaignCode</span>) = <span class="hl">campaigns[code]  <span class="cm">// no DB needed</span></span>
+  <span class="kw">override fun</span> <span class="fn">findCampaign</span>(code: <span class="tp">CampaignCode</span>) = campaigns[code]  <span class="cm">// no DB needed</span>
 }</pre>
                     </div>
                 </div>
@@ -2006,7 +2006,7 @@
   <span class="kw">fun</span> <span class="fn">processOrder</span>(order: <span class="tp">Order</span>) {
     <span class="cm">// business logic we want to test</span>
     <span class="kw">val</span> msg = <span class="fn">buildMessage</span>(order)
-<span class="hl">    <span class="fn">sendEmail</span>(msg)  <span class="cm">// side effect!</span></span>
+    <span class="fn">sendEmail</span>(msg)  <span class="cm">// side effect!</span>
   }
 
   <span class="kw">open fun</span> <span class="fn">sendEmail</span>(msg: <span class="tp">String</span>) {
@@ -2025,9 +2025,9 @@
 
   <span class="kw">val</span> sent = <span class="fn">mutableListOf</span>&lt;<span class="tp">String</span>&gt;()
 
-<span class="hl">  <span class="kw">override fun</span> <span class="fn">sendEmail</span>(msg: <span class="tp">String</span>) {</span>
-<span class="hl">    sent.<span class="fn">add</span>(msg)  <span class="cm">// capture, don't send</span></span>
-<span class="hl">  }</span>
+  <span class="kw">override fun</span> <span class="fn">sendEmail</span>(msg: <span class="tp">String</span>) {
+    sent.<span class="fn">add</span>(msg)  <span class="cm">// capture, don't send</span>
+  }
 }
 
 <span class="cm">// Now we can test processOrder</span>
@@ -2052,7 +2052,7 @@
                         </div>
 <pre style="font-size:1.05rem;line-height:1.6;">
 <span class="kw">fun</span> <span class="fn">applyDiscount</span>(order: <span class="tp">Order</span>) {
-<span class="hl">  <span class="kw">val</span> rate = <span class="fn">lookupRate</span>(order.customerId)</span>
+  <span class="kw">val</span> rate = <span class="fn">lookupRate</span>(order.customerId)
   order.finalPrice = order.basePrice * (<span class="nr">1</span> - rate)
 }
 
@@ -2064,7 +2064,7 @@
                             <span class="code-file">After — pass it in (default = production)</span>
                         </div>
 <pre style="font-size:1.05rem;line-height:1.6;">
-<span class="kw">fun</span> <span class="fn">applyDiscount</span>(order: <span class="tp">Order</span>, <span class="hl"><span class="fn">rateLookup</span>: (<span class="tp">String</span>) -> <span class="tp">BigDecimal</span> = ::<span class="fn">lookupRate</span></span>) {
+<span class="kw">fun</span> <span class="fn">applyDiscount</span>(order: <span class="tp">Order</span>, <span class="fn">rateLookup</span>: (<span class="tp">String</span>) -> <span class="tp">BigDecimal</span> = ::<span class="fn">lookupRate</span>) {
   <span class="kw">val</span> rate = <span class="fn">rateLookup</span>(order.customerId)
   order.finalPrice = order.basePrice * (<span class="nr">1</span> - rate)
 }
