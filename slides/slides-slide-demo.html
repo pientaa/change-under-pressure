@@ -452,6 +452,58 @@
         margin-top: 0.4rem;
         font-size: 0.9rem;
     }
+
+    /* ── Full-screen image slide ── */
+    .full-img-slide {
+        padding: 0 !important;
+        background: #0f172a;
+    }
+    .full-img-slide img {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    /* ── Formula display ── */
+    .formula-display {
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 700;
+        color: #0f172a;
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+    }
+
+    /* ── Ordering mechanisms lanes ── */
+    .ordering-lane {
+        background: white;
+        border: 1px solid #dbe4ee;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(15,23,42,0.05);
+        padding: 1.25rem;
+    }
+    .ordering-lane-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid;
+    }
+    .ordering-lane ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .ordering-lane ul li {
+        font-size: 0.9rem;
+        color: #475569;
+        margin-bottom: 0.45rem;
+        padding-left: 0.6rem;
+        border-left: 2px solid #e2e8f0;
+        line-height: 1.35;
+    }
     </style>
 </head>
 <body>
@@ -523,52 +575,79 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════ SLIDE 3 — LEGACY DEFINED ═══════════════════════ -->
+        <!-- ═══════════════════════ MEME: CASUAL DAY ═══════════════════════ -->
+        <section class="full-img-slide">
+            <img src="casual-day-legacy-system.png" alt=""/>
+        </section>
+
+        <!-- ═══════════════════════ MEME: IF IT WORKS ═══════════════════════ -->
+        <section class="full-img-slide">
+            <img src="if-it-works-dont-touch.png" alt=""/>
+        </section>
+
+        <!-- ═══════════════════════ ENTROPY FORMULAS ═══════════════════════ -->
         <section>
-            <div class="slide-header">
-                <h2 class="slide-title">Redefining <span>Legacy</span></h2>
-            </div>
-            <div class="slide-body">
-                <div class="text-center max-w-4xl mx-auto">
-                    <p class="text-4xl font-semibold text-ink mb-4">Legacy ≠ old tech.</p>
-                    <p class="text-5xl font-extrabold text-balance mb-6">Legacy is <span class="text-accent-600">rising cost of change.</span></p>
-                    <div class="accent-rule mx-auto mb-6"></div>
-                    <p class="text-2xl muted">Age is irrelevant. Friction is everything.</p>
+            <div class="slide-body" style="align-items:center;justify-content:center;">
+                <div class="text-center">
+                    <div class="formula-display" style="font-size:2.8rem;margin-bottom:2.5rem;">
+                        H(X) = &minus;&Sigma; p<sub style="font-size:1.8rem;vertical-align:sub;">i</sub>&thinsp;log<sub style="font-size:1.8rem;vertical-align:sub;">2</sub>(p<sub style="font-size:1.8rem;vertical-align:sub;">i</sub>)
+                    </div>
+                    <div class="formula-display" style="font-size:3.4rem;">
+                        &Delta;S &ge; 0
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══════════════════════ SLIDE 4 — COST DRIVERS ═══════════════════════ -->
+        <!-- ═══════════════════════ ORDERING MECHANISMS ═══════════════════════ -->
         <section>
-            <div class="slide-header"><h2 class="slide-title">The <span>Cost Drivers</span></h2></div>
+            <div class="slide-header">
+                <h2 class="slide-title">Ordering <span>mechanisms</span></h2>
+            </div>
             <div class="slide-body">
-                <div>
-                    <div class="grid grid-cols-2 gap-10">
-                        <div class="panel p-6">
-                            <h3 class="text-xl font-bold mb-4">Technical Coupling</h3>
-                            <ul class="accent-list">
-                                <li>Shared domain models</li>
-                                <li>Hidden decisions inside orchestration</li>
-                                <li>Missing testing seams</li>
-                                <li>Highly intertwined logic</li>
-                            </ul>
-                        </div>
-                        <div class="panel p-6">
-                            <h3 class="text-xl font-bold mb-4">Coordination Tax</h3>
-                            <ul class="accent-list">
-                                <li>Blurred ownership boundaries</li>
-                                <li>Cross-team pull requests</li>
-                                <li>Mandatory sync meetings</li>
-                                <li>Extreme cognitive load</li>
-                            </ul>
-                        </div>
+                <div class="grid gap-0 items-stretch" style="grid-template-columns:1fr 2.5rem 1fr 2.5rem 1fr;margin-bottom:1.25rem;">
+                    <!-- LEFT: Organizational -->
+                    <div class="ordering-lane" style="border-top:3px solid #f59e0b;">
+                        <div class="ordering-lane-label" style="color:#b45309;border-color:#f59e0b;">Organizational</div>
+                        <ul>
+                            <li>Conway alignment</li>
+                            <li>Team topology</li>
+                            <li>Interaction modes</li>
+                            <li>Team APIs</li>
+                            <li>SDLC end-to-end ownership</li>
+                        </ul>
                     </div>
-                    <div class="mt-6 text-center">
-                        <div class="inline-block bg-accent-50 border border-accent-500 rounded-xl px-8 py-4">
-                            <span class="text-xl font-semibold text-accent-700">Rising Cost = Technical Coupling × Coordination Tax</span>
-                        </div>
+                    <!-- Bridge → -->
+                    <div class="flex items-center justify-center">
+                        <span style="color:#cbd5e1;font-size:1.4rem;">&#8594;</span>
+                    </div>
+                    <!-- CENTER: Semantic -->
+                    <div class="ordering-lane" style="border-top:3px solid #0d9488;background:#f0fdfa;">
+                        <div class="ordering-lane-label" style="color:#0f766e;border-color:#0d9488;">Semantic</div>
+                        <ul>
+                            <li>Ubiquitous Language</li>
+                            <li>Explicit meaning</li>
+                            <li>Context mapping</li>
+                            <li>Model boundaries</li>
+                        </ul>
+                    </div>
+                    <!-- Bridge → -->
+                    <div class="flex items-center justify-center">
+                        <span style="color:#cbd5e1;font-size:1.4rem;">&#8594;</span>
+                    </div>
+                    <!-- RIGHT: Technical -->
+                    <div class="ordering-lane" style="border-top:3px solid #3b82f6;">
+                        <div class="ordering-lane-label" style="color:#1d4ed8;border-color:#3b82f6;">Technical</div>
+                        <ul>
+                            <li>Characterization tests</li>
+                            <li>Seams</li>
+                            <li>ACL</li>
+                            <li>Modular boundaries</li>
+                            <li>Bounded context implementation</li>
+                        </ul>
                     </div>
                 </div>
+                <p class="text-base muted text-center">Disorder grows unless we intentionally invest in ordering mechanisms.</p>
             </div>
         </section>
 
@@ -601,6 +680,68 @@
                         </div>
                     </div>
                     <p class="mt-5 muted text-center">When boundaries are unclear, systems drift toward shared models and shared flows.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ WORDS SHAPE SYSTEMS ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">Words shape <span>systems</span></h2>
+            </div>
+            <div class="slide-body">
+                <div class="text-center max-w-5xl mx-auto">
+                    <div class="flex justify-center items-end gap-10 mb-8">
+                        <div class="text-center">
+                            <div style="font-size:3.4rem;font-weight:800;font-family:'JetBrains Mono',monospace;color:#0f172a;">Order</div>
+                            <div style="margin-top:0.6rem;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#92400e;background:#fef3c7;border:1px solid #f59e0b;border-radius:6px;padding:0.2rem 0.75rem;display:inline-block;">Checkout</div>
+                        </div>
+                        <div style="font-size:2.8rem;font-weight:700;color:#94a3b8;line-height:1;padding-bottom:0.8rem;">&ne;</div>
+                        <div class="text-center">
+                            <div style="font-size:3.4rem;font-weight:800;font-family:'JetBrains Mono',monospace;color:#0f172a;">Order</div>
+                            <div style="margin-top:0.6rem;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#5b21b6;background:#ede9fe;border:1px solid #8b5cf6;border-radius:6px;padding:0.2rem 0.75rem;display:inline-block;">Fulfillment</div>
+                        </div>
+                        <div style="font-size:2.8rem;font-weight:700;color:#94a3b8;line-height:1;padding-bottom:0.8rem;">&ne;</div>
+                        <div class="text-center">
+                            <div style="font-size:3.4rem;font-weight:800;font-family:'JetBrains Mono',monospace;color:#0f172a;">Order</div>
+                            <div style="margin-top:0.6rem;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#1e40af;background:#dbeafe;border:1px solid #3b82f6;border-radius:6px;padding:0.2rem 0.75rem;display:inline-block;">Finance</div>
+                        </div>
+                    </div>
+                    <div class="accent-rule mx-auto mb-5"></div>
+                    <p class="text-xl muted">Same word. Different model. Hidden misalignment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ UBIQUITOUS LANGUAGE ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">Ubiquitous Language <span>is not naming</span></h2>
+            </div>
+            <div class="slide-body">
+                <div class="max-w-5xl mx-auto">
+                    <p class="text-4xl font-bold text-center mb-8 text-ink">Shared words need <span class="text-accent-600">shared meaning.</span></p>
+                    <div class="flex items-center justify-center gap-4 flex-wrap">
+                        <div class="sys-box" style="background:#fef3c7;border-color:#f59e0b;min-width:130px;">
+                            <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#92400e;margin-bottom:0.3rem;">same word</div>
+                            <div style="font-weight:700;font-family:'JetBrains Mono',monospace;">"Order"</div>
+                        </div>
+                        <div style="color:#cbd5e1;font-size:1.6rem;">&#8594;</div>
+                        <div class="sys-box" style="min-width:160px;">
+                            <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#475569;margin-bottom:0.3rem;">different contexts</div>
+                            <div style="font-size:0.82rem;color:#475569;">Checkout · Fulfillment · Finance</div>
+                        </div>
+                        <div style="color:#cbd5e1;font-size:1.6rem;">&#8594;</div>
+                        <div class="sys-box danger" style="min-width:160px;">
+                            <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#dc2626;margin-bottom:0.3rem;">different meanings</div>
+                            <div style="font-size:0.82rem;color:#475569;">false alignment</div>
+                        </div>
+                        <div style="color:#cbd5e1;font-size:1.6rem;">&#8594;</div>
+                        <div class="sys-box accent" style="min-width:155px;">
+                            <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#0f766e;margin-bottom:0.3rem;">model boundaries</div>
+                            <div style="font-size:0.82rem;color:#0f766e;">explicit context</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -882,991 +1023,511 @@
         </section>
 
 
-        <!-- ═══════════════════════ SLIDE 11 — STARTING SMALL ═══════════════════════ -->
+        <!-- ═══════════════════════ TECHNICAL ORDERING MECHANISMS ═══════════════════════ -->
         <section>
             <div class="slide-header">
-                <h2 class="slide-title">Starting <span>Small</span></h2>
-                <p class="slide-subtitle">Day one. One team. One service. Two requirements.</p>
+                <h2 class="slide-title">Technical ordering <span>mechanisms</span></h2>
             </div>
             <div class="slide-body">
-                <div class="grid grid-cols-2 gap-6 items-center max-w-5xl mx-auto">
-                    <!-- Left: C4-style context -->
-                    <div>
-                        <svg viewBox="0 0 400 280" class="w-full h-auto">
-                            <!-- User -->
-                            <rect x="140" y="5" width="120" height="45" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
-                            <text x="200" y="24" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#1e40af" text-anchor="middle">👤 Customer</text>
-                            <text x="200" y="42" font-family="Inter,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">places order</text>
-                            <!-- Arrow -->
-                            <line x1="200" y1="50" x2="200" y2="76" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray11)"/>
-                            <!-- The one service -->
-                            <rect x="80" y="80" width="240" height="70" rx="12" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
-                            <text x="200" y="108" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#0f766e" text-anchor="middle">PlaceOrderService</text>
-                            <text x="200" y="126" font-family="Inter,sans-serif" font-size="10" fill="#5eead4" text-anchor="middle">validate · apply discount · save</text>
-                            <text x="200" y="142" font-family="Inter,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">~200 lines of code</text>
-                            <!-- Arrow to DB -->
-                            <line x1="200" y1="150" x2="200" y2="176" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray11)"/>
-                            <!-- DB -->
-                            <rect x="140" y="180" width="120" height="40" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
-                            <text x="200" y="205" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">🗄️ Database</text>
-                            <!-- Team badge -->
-                            <rect x="110" y="238" width="180" height="32" rx="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
-                            <text x="200" y="258" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#1e40af" text-anchor="middle">👤👤 1 team — full ownership</text>
+                <div class="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="panel p-6 text-center" style="border-top:3px solid #3b82f6;">
+                        <div class="text-4xl mb-3">🧪</div>
+                        <div class="text-xl font-bold mb-2">Tests</div>
+                        <div class="text-sm muted">Pin behavior before moving it</div>
+                    </div>
+                    <div class="panel p-6 text-center" style="border-top:3px solid #0d9488;">
+                        <div class="text-4xl mb-3">&#9986;</div>
+                        <div class="text-xl font-bold mb-2">Seams</div>
+                        <div class="text-sm muted">Points of behavioral variation</div>
+                    </div>
+                    <div class="panel p-6 text-center" style="border-top:3px solid #8b5cf6;">
+                        <div class="text-4xl mb-3">🛡</div>
+                        <div class="text-xl font-bold mb-2">ACL</div>
+                        <div class="text-sm muted">Protect model meaning at boundaries</div>
+                    </div>
+                    <div class="panel p-6 text-center" style="border-top:3px solid #f59e0b;">
+                        <div class="text-4xl mb-3">&#127968;</div>
+                        <div class="text-xl font-bold mb-2">Ownership boundaries</div>
+                        <div class="text-sm muted">Who owns what — and what that implies</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ DON'T FIGHT THE WHOLE SYSTEM ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">Don't fight the <span>whole system</span></h2>
+            </div>
+            <div class="slide-body">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="flex justify-center gap-6 mb-8">
+                        <div class="panel p-5 text-center" style="border-top:3px solid #0d9488;min-width:160px;">
+                            <div class="text-3xl mb-2">🔍</div>
+                            <div class="text-lg font-bold text-accent-700">Isolate</div>
+                        </div>
+                        <div class="flex items-center text-2xl" style="color:#cbd5e1;">&#8594;</div>
+                        <div class="panel p-5 text-center" style="border-top:3px solid #0d9488;min-width:160px;">
+                            <div class="text-3xl mb-2">📚</div>
+                            <div class="text-lg font-bold text-accent-700">Learn</div>
+                        </div>
+                        <div class="flex items-center text-2xl" style="color:#cbd5e1;">&#8594;</div>
+                        <div class="panel p-5 text-center" style="border-top:3px solid #0d9488;min-width:160px;">
+                            <div class="text-3xl mb-2">🌱</div>
+                            <div class="text-lg font-bold text-accent-700">Expand</div>
+                        </div>
+                    </div>
+                    <div class="accent-rule mx-auto mb-6"></div>
+                    <p class="text-3xl font-bold text-ink">Don't replace. Isolate. Learn. Expand.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ CHANGE REQUEST ENTERS LEGACY ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">A change request <span>enters legacy</span></h2>
+            </div>
+            <div class="slide-body">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="panel p-10 mb-6" style="border-left:6px solid #0d9488;text-align:left;">
+                        <div class="mini-label mb-3">New requirement</div>
+                        <p class="text-3xl font-semibold text-ink leading-snug">Add new pricing rules for <span class="text-accent-600">B2B customers</span> in selected markets.</p>
+                    </div>
+                    <p class="text-xl muted mt-4">The real question is not: how do we write this code?</p>
+                    <p class="text-2xl font-bold text-ink mt-3">The real question is: where does this decision belong?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ WHERE DOES THIS DECISION BELONG? ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">Where does this decision <span>belong?</span></h2>
+            </div>
+            <div class="slide-body">
+                <div>
+                    <svg viewBox="0 0 1100 390" class="w-full h-auto">
+                        <defs>
+                            <marker id="domArr" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                                <polygon points="0 0,7 2.5,0 5" fill="#94a3b8"/>
+                            </marker>
+                        </defs>
+                        <!-- Checkout -->
+                        <rect x="20" y="165" width="160" height="60" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+                        <text x="100" y="192" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#0f766e" text-anchor="middle">Checkout</text>
+                        <text x="100" y="212" font-family="Inter,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">order placement</text>
+                        <!-- Pricing highlighted -->
+                        <rect x="455" y="55" width="190" height="75" rx="10" fill="#faf5ff" stroke="#8b5cf6" stroke-width="3"/>
+                        <text x="550" y="85" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#6d28d9" text-anchor="middle">Pricing</text>
+                        <text x="550" y="108" font-family="Inter,sans-serif" font-size="10" fill="#8b5cf6" text-anchor="middle">B2B rules? Market rules?</text>
+                        <!-- Campaigns -->
+                        <rect x="455" y="170" width="190" height="60" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+                        <text x="550" y="198" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#92400e" text-anchor="middle">Campaigns</text>
+                        <text x="550" y="218" font-family="Inter,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">promotions</text>
+                        <!-- Customer -->
+                        <rect x="455" y="275" width="190" height="60" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+                        <text x="550" y="303" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#1e40af" text-anchor="middle">Customer</text>
+                        <text x="550" y="323" font-family="Inter,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">B2B profiles</text>
+                        <!-- Finance -->
+                        <rect x="800" y="155" width="160" height="60" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+                        <text x="880" y="183" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#92400e" text-anchor="middle">Finance</text>
+                        <text x="880" y="203" font-family="Inter,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">invoicing</text>
+                        <!-- Fulfillment -->
+                        <rect x="800" y="265" width="160" height="60" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+                        <text x="880" y="293" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#0f766e" text-anchor="middle">Fulfillment</text>
+                        <text x="880" y="313" font-family="Inter,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">delivery</text>
+                        <!-- Arrows from Checkout -->
+                        <line x1="180" y1="185" x2="451" y2="100" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#domArr)" stroke-dasharray="6 3"/>
+                        <line x1="180" y1="195" x2="451" y2="200" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#domArr)" stroke-dasharray="6 3"/>
+                        <line x1="180" y1="205" x2="451" y2="298" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#domArr)" stroke-dasharray="6 3"/>
+                        <!-- Arrows right -->
+                        <line x1="645" y1="93" x2="796" y2="178" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#domArr)" stroke-dasharray="6 3"/>
+                        <line x1="645" y1="200" x2="796" y2="200" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#domArr)" stroke-dasharray="6 3"/>
+                        <line x1="645" y1="298" x2="796" y2="298" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#domArr)" stroke-dasharray="6 3"/>
+                        <text x="550" y="375" font-family="Inter,sans-serif" font-size="14" fill="#6d28d9" font-weight="700" text-anchor="middle">Who decides what "B2B pricing" means?</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ CURRENT SYSTEM: EVERYWHERE ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">The current system answers: <span>everywhere</span></h2>
+            </div>
+            <div class="slide-body">
+                <div>
+                    <svg viewBox="0 0 900 360" class="w-full h-auto">
+                        <defs>
+                            <marker id="sharedArr" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                                <polygon points="0 0,7 2.5,0 5" fill="#ef4444"/>
+                            </marker>
+                        </defs>
+                        <rect x="310" y="140" width="280" height="80" rx="12" fill="#fef2f2" stroke="#ef4444" stroke-width="3"/>
+                        <text x="450" y="173" font-family="Inter,sans-serif" font-size="17" font-weight="700" fill="#dc2626" text-anchor="middle">Shared Order</text>
+                        <text x="450" y="195" font-family="Inter,sans-serif" font-size="10" fill="#64748b" text-anchor="middle">all fields · all domains · all teams</text>
+                        <rect x="20" y="40" width="150" height="50" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+                        <text x="95" y="70" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#1e40af" text-anchor="middle">Customer</text>
+                        <line x1="170" y1="65" x2="308" y2="170" stroke="#ef4444" stroke-width="2" marker-end="url(#sharedArr)"/>
+                        <rect x="730" y="40" width="150" height="50" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+                        <text x="805" y="70" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#6d28d9" text-anchor="middle">Pricing</text>
+                        <line x1="730" y1="65" x2="592" y2="170" stroke="#ef4444" stroke-width="2" marker-end="url(#sharedArr)"/>
+                        <rect x="20" y="270" width="150" height="50" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+                        <text x="95" y="300" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#92400e" text-anchor="middle">Campaigns</text>
+                        <line x1="170" y1="295" x2="308" y2="200" stroke="#ef4444" stroke-width="2" marker-end="url(#sharedArr)"/>
+                        <rect x="730" y="270" width="150" height="50" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+                        <text x="805" y="300" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#0f766e" text-anchor="middle">Fulfillment</text>
+                        <line x1="730" y1="295" x2="592" y2="200" stroke="#ef4444" stroke-width="2" marker-end="url(#sharedArr)"/>
+                        <rect x="375" y="8" width="150" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+                        <text x="450" y="38" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#92400e" text-anchor="middle">Finance</text>
+                        <line x1="450" y1="58" x2="450" y2="138" stroke="#ef4444" stroke-width="2" marker-end="url(#sharedArr)"/>
+                        <text x="450" y="350" font-family="Inter,sans-serif" font-size="14" fill="#dc2626" font-weight="600" text-anchor="middle">A shared model looks neutral — but becomes a semantic dumping ground.</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ FIND THE BUBBLE ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">Find the <span>bubble</span></h2>
+            </div>
+            <div class="slide-body">
+                <div>
+                    <svg viewBox="0 0 1060 360" class="w-full h-auto">
+                        <defs>
+                            <marker id="bubbleArr" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                                <polygon points="0 0,7 2.5,0 5" fill="#0d9488"/>
+                            </marker>
+                        </defs>
+                        <rect x="30" y="50" width="400" height="260" rx="14" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+                        <text x="230" y="78" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#475569" text-anchor="middle">Legacy Monolith</text>
+                        <rect x="70" y="100" width="170" height="55" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+                        <text x="155" y="125" font-family="JetBrains Mono,monospace" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">Shared Order</text>
+                        <text x="155" y="144" font-family="Inter,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">mixed domains</text>
+                        <rect x="70" y="185" width="330" height="50" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+                        <text x="235" y="215" font-family="JetBrains Mono,monospace" font-size="11" fill="#475569" text-anchor="middle">PlaceOrderService</text>
+                        <line x1="430" y1="195" x2="518" y2="195" stroke="#0d9488" stroke-width="2.5" marker-end="url(#bubbleArr)"/>
+                        <text x="474" y="185" font-family="Inter,sans-serif" font-size="11" fill="#0d9488" text-anchor="middle" font-weight="600">delegates</text>
+                        <rect x="525" y="65" width="490" height="250" rx="14" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2.5" stroke-dasharray="8 4"/>
+                        <text x="770" y="96" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#6d28d9" text-anchor="middle">Pricing Bubble</text>
+                        <text x="770" y="116" font-family="Inter,sans-serif" font-size="10" fill="#8b5cf6" text-anchor="middle">own language · own model</text>
+                        <rect x="565" y="140" width="220" height="55" rx="8" fill="white" stroke="#8b5cf6" stroke-width="1.5"/>
+                        <text x="675" y="165" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#6d28d9" text-anchor="middle">PricingService</text>
+                        <text x="675" y="184" font-family="JetBrains Mono,monospace" font-size="9" fill="#64748b" text-anchor="middle">B2B rules · market rules</text>
+                        <rect x="565" y="220" width="220" height="50" rx="8" fill="white" stroke="#8b5cf6" stroke-width="1.5"/>
+                        <text x="675" y="242" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#6d28d9" text-anchor="middle">PricingContext</text>
+                        <text x="675" y="260" font-family="Inter,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">context-specific model</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ CHOOSE THE BUBBLE CAREFULLY ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">Choose the bubble <span>carefully</span></h2>
+            </div>
+            <div class="slide-body">
+                <div class="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="panel p-7 text-center" style="border-top:3px solid #0d9488;">
+                        <div class="text-4xl mb-4">💰</div>
+                        <div class="text-xl font-bold mb-2">Business value</div>
+                        <div class="text-sm muted">Is this a high-change, high-value area?</div>
+                    </div>
+                    <div class="panel p-7 text-center" style="border-top:3px solid #f59e0b;">
+                        <div class="text-4xl mb-4">🎯</div>
+                        <div class="text-xl font-bold mb-2">Small enough</div>
+                        <div class="text-sm muted">Can one team own and evolve it independently?</div>
+                    </div>
+                    <div class="panel p-7 text-center" style="border-top:3px solid #8b5cf6;">
+                        <div class="text-4xl mb-4">🧠</div>
+                        <div class="text-xl font-bold mb-2">Model complexity</div>
+                        <div class="text-sm muted">Does the domain warrant its own language?</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ A NEW MODEL NEEDS A BORDER ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">A new model needs <span>a border</span></h2>
+            </div>
+            <div class="slide-body">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="panel p-10 mb-6" style="border-left:6px solid #ef4444;">
+                        <p class="text-4xl font-bold text-ink">No border = old model leaks in.</p>
+                    </div>
+                    <p class="text-xl muted">Without an explicit boundary, the legacy vocabulary seeps into the new model — and we're back where we started.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ FIND THE SEAM ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">Find the <span>seam</span></h2>
+            </div>
+            <div class="slide-body">
+                <div>
+                    <div class="panel p-4 mb-4">
+                        <svg viewBox="0 0 1100 290" class="w-full h-auto">
                             <defs>
-                                <marker id="arrowGray11" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#94a3b8"/></marker>
+                                <marker id="seamArrGray" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                                    <polygon points="0 0,7 2.5,0 5" fill="#94a3b8"/>
+                                </marker>
+                                <marker id="seamArrPurple" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                                    <polygon points="0 0,7 2.5,0 5" fill="#8b5cf6"/>
+                                </marker>
                             </defs>
+                            <text x="100" y="28" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">Customer</text>
+                            <text x="360" y="28" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">Legacy Flow</text>
+                            <text x="640" y="28" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#6d28d9" text-anchor="middle">Pricing Bubble</text>
+                            <text x="920" y="28" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">Legacy (cont.)</text>
+                            <line x1="100" y1="42" x2="100" y2="270" stroke="#dbeafe" stroke-width="1.5" stroke-dasharray="6 4"/>
+                            <line x1="360" y1="42" x2="360" y2="270" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4"/>
+                            <line x1="640" y1="42" x2="640" y2="270" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="6 4"/>
+                            <line x1="920" y1="42" x2="920" y2="270" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4"/>
+                            <rect x="347" y="72" width="26" height="160" rx="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+                            <rect x="627" y="120" width="26" height="72" rx="5" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+                            <line x1="118" y1="82" x2="344" y2="82" stroke="#94a3b8" stroke-width="2" marker-end="url(#seamArrGray)"/>
+                            <text x="231" y="74" font-family="Inter,sans-serif" font-size="11" fill="#475569" text-anchor="middle">place order</text>
+                            <line x1="373" y1="132" x2="624" y2="132" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#seamArrPurple)"/>
+                            <text x="498" y="122" font-family="Inter,sans-serif" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="600">pricing decision</text>
+                            <rect x="474" y="100" width="70" height="20" rx="5" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+                            <text x="509" y="115" font-family="Inter,sans-serif" font-size="9" fill="#6d28d9" text-anchor="middle" font-weight="700">&#9986; seam</text>
+                            <line x1="627" y1="178" x2="376" y2="178" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#seamArrPurple)"/>
+                            <text x="501" y="170" font-family="Inter,sans-serif" font-size="11" fill="#6d28d9" text-anchor="middle">PricingResult</text>
+                            <line x1="373" y1="222" x2="905" y2="222" stroke="#94a3b8" stroke-width="2" marker-end="url(#seamArrGray)"/>
+                            <text x="640" y="214" font-family="Inter,sans-serif" font-size="11" fill="#475569" text-anchor="middle">continue flow</text>
                         </svg>
                     </div>
-                    <!-- Right: why this works -->
-                    <div class="space-y-4">
-                        <div class="panel p-4" style="border-left:4px solid #0d9488;">
-                            <div class="text-sm font-bold text-accent-700 mb-1">Requirements</div>
-                            <div class="text-sm muted">1. Accept an order with a base price</div>
-                            <div class="text-sm muted">2. Apply a campaign discount if present</div>
-                        </div>
-                        <div class="panel p-4" style="border-left:4px solid #3b82f6;">
-                            <div class="text-sm font-bold text-blue-600 mb-1">Why this works</div>
-                            <div class="text-sm muted">One team owns everything. One deployment. Zero coordination cost. Conway-aligned by default.</div>
-                        </div>
-                        <div class="text-center">
-                            <span class="text-3xl">✅</span>
-                            <div class="text-sm font-bold text-green-600 mt-1">Org ↔ Architecture: aligned</div>
-                        </div>
+                    <p class="text-xl font-semibold text-center text-ink">Where can we change behavior without cutting everything open?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ GOOD SEAM CHECKLIST ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">Good seam <span>checklist</span></h2>
+            </div>
+            <div class="slide-body">
+                <div class="max-w-4xl mx-auto grid grid-cols-2 gap-6">
+                    <div class="panel p-7" style="border-left:4px solid #0d9488;">
+                        <div class="text-3xl mb-3">&#128065;</div>
+                        <div class="text-xl font-bold mb-2">Observable</div>
+                        <div class="text-sm muted">Behavior can be measured from outside</div>
+                    </div>
+                    <div class="panel p-7" style="border-left:4px solid #0d9488;">
+                        <div class="text-3xl mb-3">🧪</div>
+                        <div class="text-xl font-bold mb-2">Testable</div>
+                        <div class="text-sm muted">Can be covered without touching the rest</div>
+                    </div>
+                    <div class="panel p-7" style="border-left:4px solid #0d9488;">
+                        <div class="text-3xl mb-3">📏</div>
+                        <div class="text-xl font-bold mb-2">Narrow</div>
+                        <div class="text-sm muted">A single, focused concern crosses the boundary</div>
+                    </div>
+                    <div class="panel p-7" style="border-left:4px solid #0d9488;">
+                        <div class="text-3xl mb-3">&#127968;</div>
+                        <div class="text-xl font-bold mb-2">Owned</div>
+                        <div class="text-sm muted">One team controls both sides of the contract</div>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <!-- ═══════════════════════ SLIDE 13 — TEMPORAL FLOW ═══════════════════════ -->
+        <!-- ═══════════════════════ PROTECT THE BUBBLE WITH ACL ═══════════════════════ -->
         <section>
-            <div class="slide-header"><h2 class="slide-title">The Temporal <span>Flow</span></h2>
-                <p class="slide-subtitle">Everything happens inside one function. Every red box is a cross-team dependency.</p>
+            <div class="slide-header">
+                <h2 class="slide-title">Protect the bubble with <span>ACL</span></h2>
             </div>
             <div class="slide-body">
                 <div>
-                    <div class="panel p-4 mx-auto overflow-hidden">
-                <svg viewBox="0 0 1240 470" class="w-full h-auto">
-                    <defs>
-                        <marker id="arrowhead3" markerWidth="5" markerHeight="4" refX="4.5" refY="2" orient="auto">
-                            <polygon points="0 0, 5 2, 0 4" fill="#0d9488"></polygon>
-                        </marker>
-                        <marker id="arrowheadMuted3" markerWidth="5" markerHeight="4" refX="4.5" refY="2" orient="auto">
-                            <polygon points="0 0, 5 2, 0 4" fill="#94a3b8"></polygon>
-                        </marker>
-                    </defs>
-                    <!-- Participants -->
-                    <g font-family="Inter, sans-serif" fill="#0f172a" text-anchor="middle">
-                        <text x="100" y="44" font-size="22" font-weight="700">User</text>
-                        <text x="340" y="44" font-size="22" font-weight="700">PlaceOrderService</text>
-                        <text x="590" y="44" font-size="22" font-weight="700">CustomerProfileService</text>
-                        <text x="820" y="44" font-size="22" font-weight="700">CampaignCatalog</text>
-                        <text x="1050" y="44" font-size="22" font-weight="700">OrderRepository</text>
-                    </g>
-                    <!-- Lifelines -->
-                    <g stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7 7">
-                        <line x1="100" y1="64" x2="100" y2="420"/>
-                        <line x1="340" y1="64" x2="340" y2="420"/>
-                        <line x1="590" y1="64" x2="590" y2="420"/>
-                        <line x1="820" y1="64" x2="820" y2="420"/>
-                        <line x1="1050" y1="64" x2="1050" y2="420"/>
-                    </g>
-                    <!-- Activation bar -->
-                    <rect x="325" y="96" width="30" height="320" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
-                    <!-- External calls (teal) -->
-                    <g stroke="#0d9488" stroke-width="2.5" fill="none" marker-end="url(#arrowhead3)">
-                        <line x1="120" y1="110" x2="328" y2="110"/>
-                        <line x1="352" y1="160" x2="578" y2="160"/>
-                        <line x1="352" y1="230" x2="808" y2="230"/>
-                        <line x1="352" y1="390" x2="1038" y2="390"/>
-                    </g>
-                    <!-- Return arrows -->
-                    <g stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowheadMuted3)">
-                        <line x1="590" y1="188" x2="354" y2="188"/>
-                        <line x1="820" y1="258" x2="354" y2="258"/>
-                    </g>
-                    <!-- Internal decisions (red — inline logic) -->
-                    <rect x="360" y="284" width="220" height="36" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
-                    <text x="470" y="308" font-family="JetBrains Mono, monospace" font-size="14" fill="#dc2626" text-anchor="middle">calculate price ⚡</text>
-                    <rect x="360" y="334" width="220" height="36" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
-                    <text x="470" y="358" font-family="JetBrains Mono, monospace" font-size="14" fill="#dc2626" text-anchor="middle">VIP → priority ⚡</text>
-                    <!-- Labels -->
-                    <g font-family="Inter, sans-serif" fill="#334155" font-size="18">
-                        <text x="220" y="102" text-anchor="middle">place order</text>
-                        <text x="460" y="152" text-anchor="middle">get profile</text>
-                        <text x="586" y="222" text-anchor="middle">lookup campaign</text>
-                        <text x="694" y="382" text-anchor="middle">save</text>
-                        <text x="464" y="182" text-anchor="middle" fill="#64748b" font-size="15">VIP + segment</text>
-                        <text x="588" y="252" text-anchor="middle" fill="#64748b" font-size="15">discount %</text>
-                    </g>
-                    <!-- Legend -->
-                    <text x="620" y="445" font-family="Inter, sans-serif" font-size="16" fill="#ef4444" font-weight="600" text-anchor="middle">⚡ = logic embedded inside PlaceOrderService</text>
-                </svg>
-                </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ SLIDE 11 — BASELINE: Order.kt ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">00</span> Baseline: <span>Shared Model</span></h2>
-                <p class="slide-subtitle">The "super-model" that every team reads and writes.</p>
-            </div>
-            <div class="slide-body">
-                <div class="max-w-3xl mx-auto">
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">Order.kt</span>
-                        </div>
-<pre style="font-size:1.05rem;line-height:1.6;">
-<span class="kw">data class</span> <span class="tp">Order</span>(
-    <span class="kw">val</span> id: <span class="tp">String</span>,
-    <span class="kw">val</span> customerId: <span class="tp">String</span>,
-<span class="hl">    <span class="kw">var</span> vip: <span class="tp">Boolean</span> = <span class="kw">false</span>,             <span class="cm">// customer</span></span>
-<span class="hl">    <span class="kw">var</span> segment: <span class="tp">Segment</span> = STANDARD,     <span class="cm">// customer</span></span>
-<span class="hl">    <span class="kw">var</span> campaignCode: <span class="tp">String</span>? = <span class="kw">null</span>,    <span class="cm">// campaigns</span></span>
-    <span class="kw">val</span> basePrice: <span class="tp">Money</span>,
-<span class="hl">    <span class="kw">var</span> finalPrice: <span class="tp">Money</span> = basePrice,   <span class="cm">// pricing</span></span>
-    <span class="kw">val</span> shippingMethod: <span class="tp">ShippingMethod</span>,
-<span class="hl">    <span class="kw">var</span> priority: <span class="tp">Boolean</span> = <span class="kw">false</span>,       <span class="cm">// fulfillment</span></span>
-    <span class="kw">var</span> status: <span class="tp">OrderStatus</span> = NEW
-)</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ SLIDE 12 — BASELINE: PlaceOrderService.kt ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">00</span> Baseline: <span>Where All the Rules Live</span></h2>
-                <p class="slide-subtitle">One function knows everything about everyone's domain.</p>
-            </div>
-            <div class="slide-body">
-                <div class="grid grid-cols-[1fr,auto,1fr] gap-0 items-stretch max-w-5xl mx-auto">
-                    <!-- LEFT CARD -->
-                    <div class="demo-code" style="border-radius:12px 0 0 12px;border-right:none;">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">PlaceOrderService.kt  (before)</span>
-                        </div>
-<pre style="font-size:0.95rem;line-height:1.55;">
-<span class="kw">fun</span> <span class="fn">placeOrder</span>(order: <span class="tp">Order</span>): <span class="tp">Order</span> {
-    <span class="kw">val</span> profile = customerService.<span class="fn">findProfile</span>(…)
-    order.vip = profile.vip
-    order.segment = profile.segment
-
-    <span class="kw">val</span> campaign = order.campaignCode?.<span class="fn">let</span> {
-        campaignCatalog.<span class="fn">findCampaign</span>(<span class="tp">CampaignCode</span>(it))
-    }
-    <span class="kw">if</span> (campaign != <span class="kw">null</span>) {
-        <span class="kw">val</span> discount = campaign.discountPercent
-        <span class="kw">val</span> factor = <span class="tp">BigDecimal</span>.ONE
-            - discount / <span class="tp">BigDecimal</span>(100)
-        order.finalPrice =
-            order.basePrice * factor
-    } <span class="kw">else</span> {
-        order.finalPrice = order.basePrice
-    }
-                                          <span class="cm">▸</span></pre>
-                    </div>
-                    <!-- CONNECTOR -->
-                    <div class="flex items-center" style="background:#1e293b;padding:0 2px;">
-                        <div style="width:2px;height:60%;background:#475569;border-radius:2px;"></div>
-                    </div>
-                    <!-- RIGHT CARD -->
-                    <div class="demo-code" style="border-radius:0 12px 12px 0;border-left:none;">
-                        <div class="code-toolbar">
-                            <span class="code-file" style="margin-left:auto;">…continued</span>
-                        </div>
-<pre style="font-size:0.95rem;line-height:1.55;">
-    <span class="kw">if</span> (order.vip) {
-        order.priority = <span class="kw">true</span>
-    } <span class="kw">else</span> {
-        order.priority = <span class="kw">false</span>
-    }
-
-    order.status = CONFIRMED
-    <span class="kw">return</span> orderRepository.<span class="fn">save</span>(order)
-}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ╔═════════════════════════════════════════════════════════════════════════╗ -->
-        <!-- ║                      DEMO-IN-SLIDES SECTION                             ║ -->
-        <!-- ╚═════════════════════════════════════════════════════════════════════════╝ -->
-
-
-        <!-- ═══════════════════════ DEMO 01 — POINT X INLINE ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">01</span> Point X: <span>"Just Add an If"</span></h2>
-                <p class="slide-subtitle">New requirement: prioritize when customer is VIP, campaign is partner, order &gt; $100, and shipping ≠ economy. One rule — four data owners.</p>
-            </div>
-            <div class="slide-body">
-                <div class="max-w-3xl mx-auto">
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">PlaceOrderService.kt  (before seams)</span>
-                        </div>
-<pre style="font-size:1.15rem;line-height:1.6;">
-<span class="cm">// "Just add an if" — what could go wrong?</span>
-
-<span class="kw">val</span> isVip       = order.vip               <span class="cm">// customer</span>
-<span class="kw">val</span> isPartner   = order.campaignCode      <span class="cm">// campaigns</span>
-                   == <span class="st">"PARTNER2026"</span>
-<span class="kw">val</span> aboveLimit  = order.finalPrice        <span class="cm">// pricing</span>
-                   >= <span class="tp">Money</span>(<span class="st">"100.00"</span>)
-<span class="kw">val</span> notEconomy  = order.shippingMethod    <span class="cm">// fulfillment</span>
-                   != <span class="tp">ShippingMethod</span>.ECONOMY
-
-<span class="hl"><span class="kw">if</span> (isVip &amp;&amp; isPartner &amp;&amp; aboveLimit &amp;&amp; notEconomy) {</span>
-<span class="hl">    order.priority = <span class="kw">true</span></span>
-<span class="hl">}</span></pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ DEMO 01b — WHAT TO EXTRACT ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title">What to <span>Extract</span></h2>
-                <p class="slide-subtitle">Every comment marks a domain boundary. Every boundary is a seam waiting to be cut.</p>
-            </div>
-            <div class="slide-body">
-                <div class="grid grid-cols-[1fr,auto,1fr] gap-0 items-stretch max-w-5xl mx-auto">
-                    <!-- LEFT CARD -->
-                    <div class="demo-code" style="border-radius:12px 0 0 12px;border-right:none;">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">PlaceOrderService.kt</span>
-                        </div>
-<pre style="font-size:0.9rem;line-height:1.5;">
-<span class="kw">fun</span> <span class="fn">placeOrder</span>(order: <span class="tp">Order</span>): <span class="tp">Order</span> {
-
-    <span class="cm">// ── CUSTOMER DOMAIN ──────────────</span>
-    <span class="kw">val</span> profile = customerProfileService
-        .<span class="fn">findProfile</span>(order.customerId)
-    order.vip = profile.vip
-    order.segment = profile.segment
-
-<span class="hl">    <span class="cm">// ── CAMPAIGN + PRICING DOMAIN ────</span></span>
-<span class="hl">    <span class="kw">val</span> campaign = order.campaignCode?.<span class="fn">let</span> {</span>
-<span class="hl">        campaignCatalog.<span class="fn">findCampaign</span>(</span>
-<span class="hl">            <span class="tp">CampaignCode</span>(it))</span>
-<span class="hl">    }</span>
-<span class="hl">    <span class="kw">if</span> (campaign != <span class="kw">null</span>) {</span>
-<span class="hl">        <span class="kw">val</span> discount = campaign.discountPercent</span>
-<span class="hl">        <span class="kw">val</span> factor = <span class="tp">BigDecimal</span>.ONE</span>
-<span class="hl">            - discount / <span class="tp">BigDecimal</span>(100)</span>
-<span class="hl">        order.finalPrice =</span>
-<span class="hl">            order.basePrice * factor</span>
-<span class="hl">    } <span class="kw">else</span> {</span>
-<span class="hl">        order.finalPrice = order.basePrice</span>
-<span class="hl">    }</span>
-                                        <span class="cm">▸</span></pre>
-                    </div>
-                    <!-- CONNECTOR -->
-                    <div class="flex items-center" style="background:#1e293b;padding:0 2px;">
-                        <div style="width:2px;height:60%;background:#475569;border-radius:2px;"></div>
-                    </div>
-                    <!-- RIGHT CARD -->
-                    <div class="demo-code" style="border-radius:0 12px 12px 0;border-left:none;">
-                        <div class="code-toolbar">
-                            <span class="code-file" style="margin-left:auto;">…continued</span>
-                        </div>
-<pre style="font-size:0.9rem;line-height:1.5;">
-<span class="hl">    <span class="cm">// ── FULFILLMENT DOMAIN ───────────</span></span>
-<span class="hl">    <span class="kw">if</span> (order.vip) {</span>
-<span class="hl">        order.priority = <span class="kw">true</span></span>
-<span class="hl">    }</span>
-<span class="hl">    <span class="cm">// high-value non-economy</span></span>
-<span class="hl">    <span class="kw">else if</span> (</span>
-<span class="hl">      order.finalPrice >= <span class="tp">Money</span>(<span class="st">"100.00"</span>)</span>
-<span class="hl">      &amp;&amp; order.shippingMethod != ECONOMY</span>
-<span class="hl">    ) { order.priority = <span class="kw">true</span> }</span>
-<span class="hl">    <span class="kw">else</span> { order.priority = <span class="kw">false</span> }</span>
-
-    <span class="cm">// ── SAVE ─────────────────────────</span>
-    order.status = CONFIRMED
-    <span class="kw">return</span> orderRepository.<span class="fn">save</span>(order)
-}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ DEMO 02 — CHARACTERIZATION TESTS ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">02</span> Safety Net: <span>Characterization Tests</span></h2>
-                <p class="slide-subtitle">Pin existing behavior before touching the design.</p>
-            </div>
-            <div class="slide-body">
-                <div class="max-w-3xl mx-auto">
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">PlaceOrderCharacterizationTest.kt</span>
-                        </div>
-<pre style="font-size:1rem;line-height:1.6;">
-<span class="kw">class</span> <span class="tp">PlaceOrderCharacterizationTest</span> : <span class="tp">FunSpec</span>({
-
-  <span class="fn">test</span>(<span class="st">"VIP with partner campaign gets</span>
-        <span class="st">priority routing and discount"</span>) {
-    <span class="kw">val</span> service = <span class="fn">buildService</span>(vipProfile)
-    <span class="kw">val</span> order = <span class="tp">Order</span>(
-      id = <span class="st">"O-1"</span>, customerId = <span class="st">"C-VIP"</span>,
-      campaignCode = <span class="st">"PARTNER2026"</span>,
-      basePrice = <span class="tp">Money</span>(<span class="st">"200.00"</span>),
-      shippingMethod = <span class="tp">ShippingMethod</span>.EXPRESS
-    )
-
-    <span class="kw">val</span> result = service.<span class="fn">placeOrder</span>(order)
-
-<span class="hl">    result.priority <span class="kw">shouldBe</span> <span class="kw">true</span></span>
-<span class="hl">    result.finalPrice <span class="kw">shouldBe</span> <span class="tp">Money</span>(<span class="st">"180.00"</span>)</span>
-  }
-})</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ═══════════════════════ DEMO 03 — FULFILLMENT SEAM ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">03</span> First Seam: <span>Fulfillment API</span></h2>
-                <p class="slide-subtitle">Extract priority logic behind a contract boundary.</p>
-            </div>
-            <div class="slide-body">
-                <div class="max-w-3xl mx-auto">
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">FulfillmentApi.kt</span>
-                        </div>
-<pre style="font-size:1.05rem;line-height:1.6;">
-<span class="cm">// Input — only what Fulfillment needs</span>
-<span class="kw">data class</span> <span class="tp">PriorityInput</span>(
-    <span class="kw">val</span> vip: <span class="tp">Boolean</span>,
-    <span class="kw">val</span> segment: <span class="tp">Segment</span>,
-    <span class="kw">val</span> campaignCode: <span class="tp">String</span>?,
-    <span class="kw">val</span> finalPrice: <span class="tp">Money</span>,
-    <span class="kw">val</span> shippingMethod: <span class="tp">ShippingMethod</span>
-)
-
-<span class="cm">// Output — the routing decision</span>
-<span class="kw">enum class</span> <span class="tp">SlaTier</span> { STANDARD, EXPEDITED, NEXT_DAY }
-
-<span class="kw">data class</span> <span class="tp">PriorityDecision</span>(
-    <span class="kw">val</span> priority: <span class="tp">Boolean</span>,
-    <span class="kw">val</span> slaTier: <span class="tp">SlaTier</span>
-)
-
-<span class="cm">// Contract</span>
-<span class="kw">interface</span> <span class="tp">FulfillmentApi</span> {
-  <span class="kw">fun</span> <span class="fn">determinePriority</span>(input: <span class="tp">PriorityInput</span>): <span class="tp">PriorityDecision</span>
-}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ DEMO 04 — FULFILLMENT IMPLEMENTATION ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">04</span> Behind the Seam: <span>PriorityService</span></h2>
-                <p class="slide-subtitle">The Fulfillment team implements the logic behind FulfillmentApi.</p>
-            </div>
-            <div class="slide-body">
-                <div class="grid grid-cols-[1fr,auto,1fr] gap-0 items-stretch max-w-6xl mx-auto">
-                    <!-- LEFT CARD -->
-                    <div class="demo-code" style="border-radius:12px 0 0 12px;border-right:none;">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">PriorityService.kt</span>
-                        </div>
-<pre style="font-size:0.88rem;line-height:1.5;">
-<span class="kw">class</span> <span class="tp">PriorityService</span> : <span class="tp">FulfillmentApi</span> {
-
-  <span class="kw">companion object</span> {
-    <span class="kw">private val</span> PRIORITY_THRESHOLD = <span class="tp">Money</span>(<span class="st">"100.00"</span>)
-    <span class="kw">private val</span> GOLD_PRIORITY_THRESHOLD = <span class="tp">Money</span>(<span class="st">"50.00"</span>)
-  }
-
-  <span class="kw">override fun</span> <span class="fn">determinePriority</span>(input: <span class="tp">PriorityInput</span>):
-    <span class="tp">PriorityDecision</span> {
-    <span class="kw">if</span> (input.vip)
-      <span class="kw">return</span> <span class="fn">priorityRouting</span>(NEXT_DAY)
-
-    <span class="kw">if</span> (input.segment == GOLD
-      &amp;&amp; input.campaignCode == <span class="st">"PARTNER2026"</span>
-      &amp;&amp; input.finalPrice >= GOLD_PRIORITY_THRESHOLD
-      &amp;&amp; input.shippingMethod != ECONOMY
-    ) <span class="kw">return</span> <span class="fn">priorityRouting</span>(EXPEDITED)
-                                        <span class="cm">▸</span></pre>
-                    </div>
-                    <!-- CONNECTOR -->
-                    <div class="flex items-center" style="background:#1e293b;padding:0 2px;">
-                        <div style="width:2px;height:60%;background:#475569;border-radius:2px;"></div>
-                    </div>
-                    <!-- RIGHT CARD -->
-                    <div class="demo-code" style="border-radius:0 12px 12px 0;border-left:none;">
-                        <div class="code-toolbar">
-                            <span class="code-file" style="margin-left:auto;">…continued</span>
-                        </div>
-<pre style="font-size:0.88rem;line-height:1.5;">
-    <span class="kw">if</span> (input.finalPrice >= PRIORITY_THRESHOLD
-      &amp;&amp; input.shippingMethod != ECONOMY
-    ) <span class="kw">return</span> <span class="fn">priorityRouting</span>(EXPEDITED)
-
-    <span class="kw">return</span> <span class="fn">standardRouting</span>()
-  }
-
-  <span class="kw">private fun</span> <span class="fn">priorityRouting</span>(sla: <span class="tp">SlaTier</span>) =
-      <span class="tp">PriorityDecision</span>(priority = <span class="kw">true</span>, slaTier = sla)
-
-  <span class="kw">private fun</span> <span class="fn">standardRouting</span>() =
-      <span class="tp">PriorityDecision</span>(priority = <span class="kw">false</span>,
-          slaTier = <span class="tp">SlaTier</span>.STANDARD)
-}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ DEMO 05 — PRICING API ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">05</span> Second Seam: <span>Pricing Contract</span></h2>
-                <p class="slide-subtitle">Pricing team gets an explicit boundary with owned models.</p>
-            </div>
-            <div class="slide-body">
-                <div class="max-w-3xl mx-auto">
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">PricingApi.kt</span>
-                        </div>
-<pre style="font-size:1.05rem;line-height:1.6;">
-<span class="cm">// Input: only pricing-relevant data</span>
-<span class="kw">data class</span> <span class="tp">PricingCommand</span>(
-    <span class="kw">val</span> basePrice: <span class="tp">Money</span>,
-    <span class="kw">val</span> campaignCode: <span class="tp">String</span>?
-)
-
-<span class="cm">// Output: pricing decision with context</span>
-<span class="kw">data class</span> <span class="tp">PricingResult</span>(
-    <span class="kw">val</span> finalPrice: <span class="tp">Money</span>,
-    <span class="kw">val</span> appliedDiscount: <span class="tp">Boolean</span>,
-    <span class="kw">val</span> discountName: <span class="tp">String</span>? = <span class="kw">null</span>
-)
-
-<span class="cm">// Contract</span>
-<span class="kw">interface</span> <span class="tp">PricingApi</span> {
-    <span class="kw">fun</span> <span class="fn">calculate</span>(cmd: <span class="tp">PricingCommand</span>): <span class="tp">PricingResult</span>
-}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ DEMO 05b — PRICING IMPLEMENTATION ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">05</span> Behind the Seam: <span>PricingService</span></h2>
-                <p class="slide-subtitle">The Pricing team implements the logic behind PricingApi.</p>
-            </div>
-            <div class="slide-body">
-                <div class="max-w-3xl mx-auto">
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">PricingService.kt  (initial extraction)</span>
-                        </div>
-<pre style="font-size:0.88rem;line-height:1.5;">
-<span class="kw">class</span> <span class="tp">PricingService</span>(
-    <span class="kw">private val</span> campaignCatalog: <span class="tp">CampaignCatalog</span>
-) : <span class="tp">PricingApi</span> {
-
-  <span class="kw">override fun</span> <span class="fn">calculate</span>(cmd: <span class="tp">PricingCommand</span>): <span class="tp">PricingResult</span> {
-    <span class="kw">val</span> campaign = cmd.campaignCode?.<span class="fn">let</span> {
-        campaignCatalog.<span class="fn">findCampaign</span>(<span class="tp">CampaignCode</span>(it))
-    }
-    <span class="kw">val</span> discount = campaign?.discountPercent ?: <span class="tp">BigDecimal</span>.ZERO
-
-    <span class="kw">return if</span> (discount > <span class="tp">BigDecimal</span>.ZERO) {
-        <span class="kw">val</span> factor = <span class="tp">BigDecimal</span>.ONE - discount / <span class="tp">BigDecimal</span>(100)
-        <span class="tp">PricingResult</span>(
-            finalPrice = cmd.basePrice * factor,
-            appliedDiscount = <span class="kw">true</span>,
-            discountName = campaign?.description
-        )
-    } <span class="kw">else</span> {
-        <span class="tp">PricingResult</span>(cmd.basePrice, appliedDiscount = <span class="kw">false</span>)
-    }
-  }
-}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ DEMO 06 — ACL MAPPERS ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">06</span> Contain Legacy: <span>ACL Mappers</span></h2>
-                <p class="slide-subtitle">Anti-Corruption Layer translates Order → context-specific models.</p>
-            </div>
-            <div class="slide-body">
-                <div class="grid grid-cols-2 gap-5 items-start">
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">OrderToPricingCommandMapper.kt</span>
-                        </div>
-<pre style="font-size:1.05rem;line-height:1.6;">
-<span class="kw">object</span> <span class="tp">OrderToPricingCommandMapper</span> {
-  <span class="kw">fun</span> <span class="fn">map</span>(order: <span class="tp">Order</span>) =
-    <span class="tp">PricingCommand</span>(
-      basePrice = order.basePrice,
-      campaignCode = order.campaignCode
-    )
-}</pre>
-                    </div>
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">OrderToPriorityInputMapper.kt</span>
-                        </div>
-<pre style="font-size:1.05rem;line-height:1.6;">
-<span class="kw">object</span> <span class="tp">OrderToPriorityInputMapper</span> {
-  <span class="kw">fun</span> <span class="fn">map</span>(order: <span class="tp">Order</span>) =
-    <span class="tp">PriorityInput</span>(
-      vip = order.vip,
-      segment = order.segment,
-      campaignCode = order.campaignCode,
-      finalPrice = order.finalPrice,
-      shippingMethod = order.shippingMethod
-    )
-}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ DEMO 07 — PROOF ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">07</span> Proof: <span>Next Change Is Local</span></h2>
-                <p class="slide-subtitle">GOLD segment gets a lower priority threshold — only fulfillment files change.</p>
-            </div>
-            <div class="slide-body">
-                <div class="max-w-3xl mx-auto">
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">PriorityService.kt — diff</span>
-                        </div>
-<pre style="font-size:0.92rem;line-height:1.5;">
-<span class="kw">class</span> <span class="tp">PriorityService</span> : <span class="tp">FulfillmentApi</span> {
-
-  <span class="kw">companion object</span> {
-    <span class="kw">private val</span> PRIORITY_THRESHOLD = <span class="tp">Money</span>(<span class="st">"100.00"</span>)
-<span class="diff-add">+   <span class="kw">private val</span> GOLD_THRESHOLD = <span class="tp">Money</span>(<span class="st">"50.00"</span>)</span>
-    <span class="cm">// …</span>
-  }
-
-  <span class="kw">override fun</span> <span class="fn">determinePriority</span>(…) {
-    <span class="kw">if</span> (input.vip) <span class="kw">return</span> <span class="fn">priorityRouting</span>(…)
-
-<span class="diff-add">+   <span class="cm">// NEW: GOLD segment — lower threshold</span></span>
-<span class="diff-add">+   <span class="kw">if</span> (input.segment == <span class="tp">Segment</span>.GOLD</span>
-<span class="diff-add">+       &amp;&amp; input.campaignCode == <span class="st">"PARTNER2026"</span></span>
-<span class="diff-add">+       &amp;&amp; input.finalPrice >= GOLD_THRESHOLD</span>
-<span class="diff-add">+       &amp;&amp; input.shippingMethod != ECONOMY</span>
-<span class="diff-add">+   ) <span class="kw">return</span> <span class="fn">priorityRouting</span>(<span class="tp">SlaTier</span>.EXPEDITED)</span>
-
-    <span class="cm">// … existing rules unchanged</span>
-  }
-}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ THE RESULT — INTERMEDIATE ORCHESTRATOR ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title">Halfway There: <span>Thin Orchestrator</span></h2>
-                <p class="slide-subtitle">Logic is delegated. But look what the orchestrator still does…</p>
-            </div>
-            <div class="slide-body">
-                <div class="max-w-3xl mx-auto">
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">PlaceOrderService.kt  (step 07)</span>
-                        </div>
-<pre style="font-size:1.05rem;line-height:1.6;">
-<span class="kw">fun</span> <span class="fn">placeOrder</span>(order: <span class="tp">Order</span>): <span class="tp">Order</span> {
-    <span class="cm">// --- enrich ---</span>
-    <span class="kw">val</span> profile = customerProfileService.<span class="fn">findProfile</span>(…)
-    order.vip = profile.vip
-    order.segment = profile.segment
-
-    <span class="cm">// --- pricing: delegated ---</span>
-    <span class="kw">val</span> cmd = <span class="tp">OrderToPricingCommandMapper</span>.<span class="fn">map</span>(order)
-    <span class="kw">val</span> pricingResult = pricingApi.<span class="fn">calculate</span>(cmd)
-<span class="hl" style="background:#fee2e2;border-left:3px solid #ef4444;padding-left:4px;color:#991b1b;">    order.finalPrice = pricingResult.finalPrice</span>
-
-    <span class="cm">// --- fulfillment: delegated ---</span>
-    <span class="kw">val</span> input = <span class="tp">OrderToPriorityInputMapper</span>.<span class="fn">map</span>(order)
-    <span class="kw">val</span> decision = fulfillmentApi.<span class="fn">determinePriority</span>(input)
-<span class="hl" style="background:#fee2e2;border-left:3px solid #ef4444;padding-left:4px;color:#991b1b;">    order.priority = decision.priority</span>
-
-    order.status = CONFIRMED
-<span class="hl" style="background:#fee2e2;border-left:3px solid #ef4444;padding-left:4px;color:#991b1b;">    <span class="kw">return</span> orderRepository.<span class="fn">save</span>(order)</span>
-}</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ SLIDE — WHAT'S STILL COUPLED? (diagram) ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title">What's Still <span>Coupled?</span></h2>
-                <p class="slide-subtitle">We moved the logic out — but PlaceOrderService still writes everyone's data.</p>
-            </div>
-            <div class="slide-body">
-                <div>
-                    <svg viewBox="0 0 1100 380" class="w-full h-auto">
-                        <!-- Participants -->
-                        <rect x="20" y="8" width="200" height="40" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-                        <text x="120" y="34" font-family="JetBrains Mono,monospace" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">PlaceOrderService</text>
-                        <rect x="320" y="8" width="160" height="40" rx="12" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
-                        <text x="400" y="34" font-family="JetBrains Mono,monospace" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="700">PricingApi</text>
-                        <rect x="580" y="8" width="200" height="40" rx="12" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
-                        <text x="680" y="34" font-family="JetBrains Mono,monospace" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="700">FulfillmentApi</text>
-                        <rect x="880" y="8" width="180" height="40" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-                        <text x="970" y="34" font-family="JetBrains Mono,monospace" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">OrderRepository</text>
-                        <!-- Lifelines -->
-                        <line x1="120" y1="48" x2="120" y2="350" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4"/>
-                        <line x1="400" y1="48" x2="400" y2="350" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="6 4"/>
-                        <line x1="680" y1="48" x2="680" y2="350" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="6 4"/>
-                        <line x1="970" y1="48" x2="970" y2="350" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4"/>
-                        <!-- Call 1: pricing -->
-                        <line x1="120" y1="80" x2="400" y2="80" stroke="#0d9488" stroke-width="2" marker-end="url(#seqArr2)"/>
-                        <text x="260" y="72" font-family="JetBrains Mono,monospace" font-size="13" fill="#0f766e" text-anchor="middle">calculate(cmd)</text>
-                        <line x1="400" y1="110" x2="120" y2="110" stroke="#0d9488" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#seqArr2)"/>
-                        <text x="260" y="102" font-family="JetBrains Mono,monospace" font-size="13" fill="#0f766e" text-anchor="middle">PricingResult</text>
-                        <!-- PlaceOrderService writes pricing -->
-                        <rect x="40" y="125" width="160" height="32" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
-                        <text x="120" y="146" font-family="JetBrains Mono,monospace" font-size="12" fill="#dc2626" text-anchor="middle">order.finalPrice =</text>
-                        <!-- Call 2: fulfillment -->
-                        <line x1="120" y1="180" x2="680" y2="180" stroke="#0d9488" stroke-width="2" marker-end="url(#seqArr2)"/>
-                        <text x="480" y="172" font-family="JetBrains Mono,monospace" font-size="13" fill="#0f766e" text-anchor="middle">determinePriority(input)</text>
-                        <line x1="680" y1="210" x2="120" y2="210" stroke="#0d9488" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#seqArr2)"/>
-                        <text x="480" y="202" font-family="JetBrains Mono,monospace" font-size="13" fill="#0f766e" text-anchor="middle">PriorityDecision</text>
-                        <!-- PlaceOrderService writes fulfillment -->
-                        <rect x="40" y="225" width="160" height="32" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
-                        <text x="120" y="248" font-family="JetBrains Mono,monospace" font-size="12" fill="#dc2626" text-anchor="middle">order.priority =</text>
-                        <!-- Call 3: save to repository -->
-                        <line x1="120" y1="280" x2="970" y2="280" stroke="#94a3b8" stroke-width="2" marker-end="url(#seqArr2Gray)"/>
-                        <text x="545" y="272" font-family="JetBrains Mono,monospace" font-size="13" fill="#64748b" text-anchor="middle">save(order)</text>
-                        <!-- Annotation -->
-                        <text x="550" y="370" font-family="Inter,sans-serif" font-size="14" fill="#ef4444" font-weight="600" text-anchor="middle">⚠ PlaceOrderService owns Order with all fields from all domains</text>
+                    <svg viewBox="0 0 1100 320" class="w-full h-auto">
                         <defs>
-                            <marker id="seqArr2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#0d9488"/></marker>
-                            <marker id="seqArr2Gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#94a3b8"/></marker>
+                            <marker id="aclArrTeal" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                                <polygon points="0 0,7 2.5,0 5" fill="#0d9488"/>
+                            </marker>
+                            <marker id="aclArrPurple" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                                <polygon points="0 0,7 2.5,0 5" fill="#8b5cf6"/>
+                            </marker>
                         </defs>
+                        <rect x="15" y="65" width="210" height="185" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+                        <text x="120" y="92" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">Legacy</text>
+                        <rect x="45" y="110" width="150" height="50" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+                        <text x="120" y="138" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">Legacy Order</text>
+                        <rect x="45" y="178" width="150" height="45" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+                        <text x="120" y="205" font-family="JetBrains Mono,monospace" font-size="10" fill="#475569" text-anchor="middle">PlaceOrderService</text>
+                        <rect x="390" y="50" width="215" height="215" rx="12" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+                        <text x="497" y="80" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#0f766e" text-anchor="middle">ACL</text>
+                        <text x="497" y="100" font-family="Inter,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Anti-Corruption Layer</text>
+                        <rect x="415" y="115" width="165" height="40" rx="6" fill="white" stroke="#0d9488" stroke-width="1.5"/>
+                        <text x="497" y="139" font-family="JetBrains Mono,monospace" font-size="10" fill="#0f766e" text-anchor="middle">OrderMapper</text>
+                        <rect x="415" y="178" width="165" height="40" rx="6" fill="white" stroke="#0d9488" stroke-width="1.5"/>
+                        <text x="497" y="202" font-family="JetBrains Mono,monospace" font-size="10" fill="#0f766e" text-anchor="middle">ResultMapper</text>
+                        <rect x="775" y="65" width="300" height="185" rx="12" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2.5" stroke-dasharray="8 4"/>
+                        <text x="925" y="92" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#6d28d9" text-anchor="middle">Pricing Bubble</text>
+                        <rect x="805" y="110" width="240" height="50" rx="8" fill="white" stroke="#8b5cf6" stroke-width="1.5"/>
+                        <text x="925" y="138" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#6d28d9" text-anchor="middle">PricingRequest</text>
+                        <rect x="805" y="178" width="240" height="45" rx="8" fill="white" stroke="#8b5cf6" stroke-width="1.5"/>
+                        <text x="925" y="204" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#6d28d9" text-anchor="middle">PricingDecision</text>
+                        <line x1="225" y1="135" x2="386" y2="135" stroke="#0d9488" stroke-width="2" marker-end="url(#aclArrTeal)"/>
+                        <text x="306" y="126" font-family="Inter,sans-serif" font-size="10" fill="#0f766e" text-anchor="middle">Legacy Order</text>
+                        <line x1="605" y1="135" x2="801" y2="135" stroke="#8b5cf6" stroke-width="2" marker-end="url(#aclArrPurple)"/>
+                        <text x="703" y="126" font-family="Inter,sans-serif" font-size="10" fill="#6d28d9" text-anchor="middle">PricingRequest</text>
+                        <line x1="801" y1="200" x2="605" y2="200" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#aclArrPurple)"/>
+                        <text x="703" y="218" font-family="Inter,sans-serif" font-size="10" fill="#6d28d9" text-anchor="middle">PricingDecision</text>
+                        <line x1="386" y1="200" x2="225" y2="200" stroke="#0d9488" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#aclArrTeal)"/>
+                        <text x="306" y="218" font-family="Inter,sans-serif" font-size="10" fill="#0f766e" text-anchor="middle">Legacy result</text>
+                        <text x="550" y="305" font-family="Inter,sans-serif" font-size="14" fill="#0f766e" font-weight="600" text-anchor="middle">ACL is not just field mapping — ACL protects meaning.</text>
                     </svg>
                 </div>
             </div>
         </section>
 
-        <!-- ═══════════════════════ DEMO 08 — DECOUPLE DATA OWNERSHIP ═══════════════════════ -->
+        <!-- ═══════════════════════ WHEN THE BUBBLE OWNS STATE ═══════════════════════ -->
         <section>
             <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">08</span> Decouple <span>Data Ownership</span></h2>
-                <p class="slide-subtitle">Split the model. Drop cross-context writes. Each context persists its own data.</p>
-            </div>
-            <div class="slide-body">
-                <div class="grid grid-cols-[3fr,2fr] gap-4 items-start max-w-6xl mx-auto">
-                    <!-- LEFT — PlaceOrderService -->
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">PlaceOrderService.kt  (refactored)</span>
-                        </div>
-<pre style="font-size:0.8rem;line-height:1.45;">
-<span class="kw">class</span> <span class="tp">PlaceOrderService</span>(
-    <span class="kw">private val</span> customerApi: <span class="tp">CustomerApi</span>,
-    <span class="kw">private val</span> pricingApi: <span class="tp">PricingApi</span>,
-    <span class="kw">private val</span> fulfillmentApi: <span class="tp">FulfillmentApi</span>,
-    <span class="kw">private val</span> checkoutRepo:
-        <span class="tp">CheckoutOrderRepository</span>
-) {
-  <span class="kw">fun</span> <span class="fn">placeOrder</span>(order: <span class="tp">CheckoutOrder</span>):
-      <span class="tp">PlaceOrderResult</span> {
-    <span class="kw">val</span> profile = customerApi.<span class="fn">findProfile</span>(order.customerId)
-
-    <span class="kw">val</span> pricingCmd =
-        <span class="tp">CheckoutToPricingCommandMapper</span>.<span class="fn">map</span>(order)
-    <span class="kw">val</span> pricingResult = pricingApi.<span class="fn">calculate</span>(pricingCmd)
-
-    <span class="kw">val</span> priorityInput =
-        <span class="tp">CheckoutToPriorityInputMapper</span>
-            .<span class="fn">map</span>(order, profile, pricingResult)
-    <span class="kw">val</span> decision =
-        fulfillmentApi.<span class="fn">determinePriority</span>(priorityInput)
-
-    order.status = CONFIRMED
-    checkoutRepo.<span class="fn">save</span>(order)
-
-    <span class="kw">return</span> <span class="tp">PlaceOrderResult</span>(order, profile,
-        pricingResult, decision)
-  }
-}</pre>
-                    </div>
-                    <!-- RIGHT — CheckoutOrder -->
-                    <div class="demo-code">
-                        <div class="code-toolbar">
-                            <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                            <span class="code-file">CheckoutOrder.kt  (slim model)</span>
-                        </div>
-<pre style="font-size:0.95rem;line-height:1.55;">
-<span class="kw">data class</span> <span class="tp">CheckoutOrder</span>(
-    <span class="kw">val</span> id: <span class="tp">String</span>,
-    <span class="kw">val</span> customerId: <span class="tp">String</span>,
-    <span class="kw">val</span> basePrice: <span class="tp">Money</span>,
-    <span class="kw">val</span> campaignCode: <span class="tp">String</span>?,
-    <span class="kw">val</span> shippingMethod: <span class="tp">ShippingMethod</span>,
-    <span class="kw">var</span> status: <span class="tp">OrderStatus</span>
-)</pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════ DEMO 08b — ARCHITECTURE AFTER ═══════════════════════ -->
-        <section>
-            <div class="slide-header">
-                <h2 class="slide-title"><span class="demo-step-badge">08</span> The Architecture <span>After</span></h2>
-                <p class="slide-subtitle">Each team owns its model, logic, and storage.</p>
+                <h2 class="slide-title">When the bubble owns <span>state</span></h2>
             </div>
             <div class="slide-body">
                 <div>
-                    <svg viewBox="0 0 1100 460" class="w-full" style="height:500px;">
+                    <svg viewBox="0 0 1100 330" class="w-full h-auto">
                         <defs>
-                            <marker id="c4arr" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#0d9488"/></marker>
-                            <marker id="c4arrPurple" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#8b5cf6"/></marker>
-                            <marker id="c4arrGray" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#94a3b8"/></marker>
+                            <marker id="stateArrTeal" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                                <polygon points="0 0,7 2.5,0 5" fill="#0d9488"/>
+                            </marker>
+                            <marker id="stateArrPurple" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                                <polygon points="0 0,7 2.5,0 5" fill="#8b5cf6"/>
+                            </marker>
                         </defs>
-
-                        <!-- ══════ EXTERNAL — CustomerProfileService (far left) ══════ -->
-                        <rect x="10" y="60" width="185" height="65" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
-                        <text x="102" y="86" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">CustomerProfileService</text>
-                        <text x="102" y="108" font-family="Inter,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">external</text>
-
-                        <!-- ══════ CHECKOUT bounded context ══════ -->
-                        <rect x="230" y="5" width="370" height="320" rx="12" fill="#f0fdfa" stroke="#0d9488" stroke-width="2" stroke-dasharray="8 4"/>
-                        <text x="415" y="30" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#0f766e" text-anchor="middle">CHECKOUT · Checkout team</text>
-
-                        <!-- PlaceOrderService -->
-                        <rect x="255" y="46" width="320" height="70" rx="8" fill="white" stroke="#0d9488" stroke-width="2"/>
-                        <text x="415" y="74" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0f766e" text-anchor="middle">PlaceOrderService</text>
-                        <text x="415" y="98" font-family="Inter,sans-serif" font-size="12" fill="#64748b" text-anchor="middle">thin orchestrator · coordinates only</text>
-
-                        <!-- CheckoutOrder model -->
-                        <rect x="255" y="132" width="320" height="65" rx="6" fill="white" stroke="#0d9488" stroke-width="1.5"/>
-                        <text x="415" y="157" font-family="JetBrains Mono,monospace" font-size="13" font-weight="700" fill="#0f766e" text-anchor="middle">CheckoutOrder</text>
-                        <text x="415" y="180" font-family="JetBrains Mono,monospace" font-size="10" fill="#64748b" text-anchor="middle">id · customerId · basePrice · campaignCode · status</text>
-
-                        <!-- PlaceOrderResult model -->
-                        <rect x="255" y="212" width="320" height="60" rx="6" fill="white" stroke="#0d9488" stroke-width="1.5"/>
-                        <text x="415" y="236" font-family="JetBrains Mono,monospace" font-size="13" font-weight="700" fill="#0f766e" text-anchor="middle">PlaceOrderResult</text>
-                        <text x="415" y="258" font-family="JetBrains Mono,monospace" font-size="10" fill="#64748b" text-anchor="middle">composite: order + pricingResult + decision</text>
-
-                        <!-- ══════ PRICING bounded context (right-top) ══════ -->
-                        <rect x="645" y="5" width="445" height="210" rx="12" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="8 4"/>
-                        <text x="868" y="30" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#6d28d9" text-anchor="middle">PRICING · Pricing team</text>
-
-                        <!-- PricingService -->
-                        <rect x="670" y="46" width="220" height="65" rx="8" fill="white" stroke="#8b5cf6" stroke-width="2"/>
-                        <text x="780" y="72" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#6d28d9" text-anchor="middle">PricingService</text>
-                        <text x="780" y="94" font-family="JetBrains Mono,monospace" font-size="10" fill="#64748b" text-anchor="middle">implements PricingApi</text>
-
-                        <!-- CampaignCatalog -->
-                        <rect x="910" y="46" width="165" height="65" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
-                        <text x="992" y="72" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">CampaignCatalog</text>
-                        <text x="992" y="94" font-family="Inter,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">external</text>
-
-                        <!-- PricingService → CampaignCatalog arrow -->
-                        <line x1="890" y1="78" x2="906" y2="78" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#c4arrPurple)"/>
-
-                        <!-- PricingResult model -->
-                        <rect x="670" y="128" width="220" height="60" rx="6" fill="white" stroke="#8b5cf6" stroke-width="1.5"/>
-                        <text x="780" y="153" font-family="JetBrains Mono,monospace" font-size="13" font-weight="700" fill="#6d28d9" text-anchor="middle">PricingResult</text>
-                        <text x="780" y="175" font-family="JetBrains Mono,monospace" font-size="10" fill="#64748b" text-anchor="middle">finalPrice · appliedDiscount</text>
-
-                        <!-- ══════ FULFILLMENT bounded context (right-bottom) ══════ -->
-                        <rect x="645" y="235" width="445" height="210" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" stroke-dasharray="8 4"/>
-                        <text x="868" y="260" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#92400e" text-anchor="middle">FULFILLMENT · Fulfillment team</text>
-
-                        <!-- PriorityService -->
-                        <rect x="670" y="274" width="220" height="65" rx="8" fill="white" stroke="#f59e0b" stroke-width="2"/>
-                        <text x="780" y="300" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#92400e" text-anchor="middle">PriorityService</text>
-                        <text x="780" y="322" font-family="JetBrains Mono,monospace" font-size="10" fill="#64748b" text-anchor="middle">implements FulfillmentApi</text>
-
-                        <!-- PriorityDecision model -->
-                        <rect x="670" y="356" width="220" height="55" rx="6" fill="white" stroke="#f59e0b" stroke-width="1.5"/>
-                        <text x="780" y="380" font-family="JetBrains Mono,monospace" font-size="13" font-weight="700" fill="#92400e" text-anchor="middle">PriorityDecision</text>
-                        <text x="780" y="400" font-family="JetBrains Mono,monospace" font-size="10" fill="#64748b" text-anchor="middle">priority · slaTier</text>
-
-                        <!-- ══════ ARROWS — service dependencies ══════ -->
-                        <!-- PlaceOrderService → CustomerProfileService (left) -->
-                        <line x1="255" y1="82" x2="199" y2="82" stroke="#0d9488" stroke-width="2" marker-end="url(#c4arr)"/>
-
-                        <!-- PlaceOrderService → PricingService (right) -->
-                        <line x1="575" y1="70" x2="666" y2="70" stroke="#0d9488" stroke-width="2" marker-end="url(#c4arr)"/>
-
-                        <!-- PlaceOrderService → PriorityService (right-down) -->
-                        <line x1="575" y1="100" x2="620" y2="100" stroke="#0d9488" stroke-width="2"/>
-                        <line x1="620" y1="100" x2="620" y2="300" stroke="#0d9488" stroke-width="2"/>
-                        <line x1="620" y1="300" x2="666" y2="300" stroke="#0d9488" stroke-width="2" marker-end="url(#c4arr)"/>
+                        <rect x="15" y="20" width="310" height="270" rx="14" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+                        <text x="170" y="48" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">Legacy</text>
+                        <rect x="50" y="65" width="240" height="55" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+                        <text x="170" y="89" font-family="JetBrains Mono,monospace" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">Legacy Model</text>
+                        <text x="170" y="107" font-family="Inter,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">all mixed fields</text>
+                        <rect x="50" y="150" width="240" height="55" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+                        <text x="170" y="175" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">&#128451; Legacy Store</text>
+                        <text x="170" y="193" font-family="Inter,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">single shared database</text>
+                        <rect x="390" y="65" width="280" height="195" rx="12" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+                        <text x="530" y="96" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#0f766e" text-anchor="middle">Synchronizing ACL</text>
+                        <rect x="415" y="115" width="230" height="40" rx="6" fill="white" stroke="#0d9488" stroke-width="1.5"/>
+                        <text x="530" y="139" font-family="JetBrains Mono,monospace" font-size="10" fill="#0f766e" text-anchor="middle">translation · sync logic</text>
+                        <rect x="415" y="175" width="230" height="40" rx="6" fill="white" stroke="#0d9488" stroke-width="1.5"/>
+                        <text x="530" y="199" font-family="JetBrains Mono,monospace" font-size="10" fill="#0f766e" text-anchor="middle">event / async bridge</text>
+                        <rect x="740" y="20" width="340" height="270" rx="14" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2.5" stroke-dasharray="8 4"/>
+                        <text x="910" y="48" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#6d28d9" text-anchor="middle">Pricing Bubble</text>
+                        <rect x="775" y="65" width="270" height="55" rx="8" fill="white" stroke="#8b5cf6" stroke-width="1.5"/>
+                        <text x="910" y="89" font-family="JetBrains Mono,monospace" font-size="12" font-weight="700" fill="#6d28d9" text-anchor="middle">Bubble Model</text>
+                        <text x="910" y="107" font-family="Inter,sans-serif" font-size="9" fill="#8b5cf6" text-anchor="middle">own language · own fields</text>
+                        <rect x="775" y="150" width="270" height="55" rx="8" fill="white" stroke="#8b5cf6" stroke-width="1.5"/>
+                        <text x="910" y="175" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#6d28d9" text-anchor="middle">&#128451; Bubble Store</text>
+                        <text x="910" y="193" font-family="Inter,sans-serif" font-size="9" fill="#8b5cf6" text-anchor="middle">owns its own data</text>
+                        <line x1="325" y1="135" x2="386" y2="148" stroke="#0d9488" stroke-width="2" marker-end="url(#stateArrTeal)"/>
+                        <line x1="386" y1="168" x2="325" y2="178" stroke="#0d9488" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#stateArrTeal)"/>
+                        <line x1="670" y1="148" x2="736" y2="135" stroke="#8b5cf6" stroke-width="2" marker-end="url(#stateArrPurple)"/>
+                        <line x1="736" y1="178" x2="670" y2="168" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#stateArrPurple)"/>
+                        <text x="550" y="320" font-family="Inter,sans-serif" font-size="13" fill="#0f172a" font-weight="600" text-anchor="middle">Two models. Explicit translation. Freshness is now a design decision.</text>
                     </svg>
                 </div>
             </div>
         </section>
 
-        <!-- ═══════════════════════ TEAM APIs IN PRACTICE ═══════════════════════ -->
+        <!-- ═══════════════════════ THREE INTEGRATION CHOICES ═══════════════════════ -->
         <section>
-            <div class="slide-header"><h2 class="slide-title">Team APIs <span>in Practice</span></h2></div>
+            <div class="slide-header">
+                <h2 class="slide-title">Three integration <span>choices</span></h2>
+                <p class="slide-subtitle">After Eric Evans, <em>Getting Started with DDD When Surrounded by Legacy Systems</em></p>
+            </div>
             <div class="slide-body">
-                <div class="space-y-3 max-w-6xl mx-auto">
-                    <!-- Checkout Team API -->
-                    <div class="panel p-4" style="border-left: 4px solid #0d9488;">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="text-base font-bold text-ink">Checkout Team</div>
-                            <span class="inline-block bg-accent-50 text-accent-700 rounded-full px-3 py-0.5 text-xs font-semibold">Stream-aligned</span>
-                        </div>
-                        <div class="grid grid-cols-4 gap-4">
-                            <div>
-                                <div class="font-bold text-accent-700 text-xs uppercase tracking-wider mb-1">Software owned</div>
-                                <div class="text-sm text-slate-600"><code class="text-xs">PlaceOrderService</code><br><code class="text-xs">CheckoutOrder</code><br><code class="text-xs">ACL mappers</code></div>
-                            </div>
-                            <div>
-                                <div class="font-bold text-accent-700 text-xs uppercase tracking-wider mb-1">Services provided</div>
-                                <div class="mt-1"><code class="text-xs bg-gray-100 rounded px-1.5 py-0.5">POST /checkout/orders</code></div>
-                            </div>
-                            <div>
-                                <div class="font-bold text-accent-700 text-xs uppercase tracking-wider mb-1">Data owned</div>
-                                <div class="text-sm text-slate-600"><code class="text-xs">CheckoutOrderRepository</code></div>
-                            </div>
-                            <div>
-                                <div class="font-bold text-accent-700 text-xs uppercase tracking-wider mb-1">Communication</div>
-                                <div class="text-sm">#checkout-support <span class="muted text-xs">(async)</span></div>
-                                <div class="text-sm">Office hours Wed 15:00 <span class="muted text-xs">(sync)</span></div>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <div class="font-bold text-accent-700 text-xs uppercase tracking-wider mb-2">Teams we interact with</div>
-                            <table class="w-full text-xs border-collapse">
-                                <thead>
-                                    <tr class="border-b border-gray-200">
-                                        <th class="text-left py-1 pr-2 font-semibold text-ink">Team</th>
-                                        <th class="text-left py-1 pr-2 font-semibold text-ink">Mode</th>
-                                        <th class="text-left py-1 pr-2 font-semibold text-ink">Purpose</th>
-                                        <th class="text-left py-1 font-semibold text-ink">Duration</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="border-b border-gray-100">
-                                        <td class="py-1 pr-2">Pricing</td>
-                                        <td class="py-1 pr-2 font-semibold">X-as-a-Service</td>
-                                        <td class="py-1 pr-2">Price calculation</td>
-                                        <td class="py-1 muted">Ongoing</td>
-                                    </tr>
-                                    <tr class="border-b border-gray-100">
-                                        <td class="py-1 pr-2">Fulfillment</td>
-                                        <td class="py-1 pr-2 font-semibold">X-as-a-Service</td>
-                                        <td class="py-1 pr-2">Priority determination</td>
-                                        <td class="py-1 muted">Ongoing</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-1 pr-2">Customer</td>
-                                        <td class="py-1 pr-2 font-semibold">X-as-a-Service</td>
-                                        <td class="py-1 pr-2">Profile data</td>
-                                        <td class="py-1 muted">Ongoing</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="panel p-6" style="border-top:3px solid #f59e0b;">
+                        <div class="mini-label mb-3" style="color:#92400e;">1. Umbilical ACL</div>
+                        <ul class="space-y-3" style="list-style:none;padding:0;margin:0;">
+                            <li class="stat-line"><span class="dot" style="background:#f59e0b;"></span><span class="text-sm">Legacy remains the source</span></li>
+                            <li class="stat-line"><span class="dot" style="background:#f59e0b;"></span><span class="text-sm">Translate on demand</span></li>
+                            <li class="stat-line"><span class="dot" style="background:#f59e0b;"></span><span class="text-sm">Lower autonomy</span></li>
+                        </ul>
                     </div>
-                    <!-- Pricing Team API -->
-                    <div class="panel p-4" style="border-left: 4px solid #3b82f6;">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="text-base font-bold text-ink">Pricing Team</div>
-                            <span class="inline-block bg-blue-50 text-blue-700 rounded-full px-3 py-0.5 text-xs font-semibold">Stream-aligned</span>
-                        </div>
-                        <div class="grid grid-cols-4 gap-4">
-                            <div>
-                                <div class="font-bold text-blue-700 text-xs uppercase tracking-wider mb-1">Software owned</div>
-                                <div class="text-sm text-slate-600"><code class="text-xs">PricingService</code><br><code class="text-xs">PricingApi</code><br><code class="text-xs">Campaign rules</code></div>
-                            </div>
-                            <div>
-                                <div class="font-bold text-blue-700 text-xs uppercase tracking-wider mb-1">Services provided</div>
-                                <div class="mt-1"><code class="text-xs bg-gray-100 rounded px-1.5 py-0.5">PricingCommand → PricingResult</code></div>
-                                <div class="mt-1"><code class="text-xs bg-gray-100 rounded px-1.5 py-0.5">Event: price.calculated</code></div>
-                            </div>
-                            <div>
-                                <div class="font-bold text-blue-700 text-xs uppercase tracking-wider mb-1">Data owned</div>
-                                <div class="text-sm text-slate-600"><code class="text-xs">PricingResultRepository</code></div>
-                            </div>
-                            <div>
-                                <div class="font-bold text-blue-700 text-xs uppercase tracking-wider mb-1">Communication</div>
-                                <div class="text-sm">#pricing-support <span class="muted text-xs">(async)</span></div>
-                                <div class="text-sm">Office hours Tue 14:00 <span class="muted text-xs">(sync)</span></div>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <div class="font-bold text-blue-700 text-xs uppercase tracking-wider mb-2">Teams we interact with</div>
-                            <table class="w-full text-xs border-collapse">
-                                <thead>
-                                    <tr class="border-b border-gray-200">
-                                        <th class="text-left py-1 pr-2 font-semibold text-ink">Team</th>
-                                        <th class="text-left py-1 pr-2 font-semibold text-ink">Mode</th>
-                                        <th class="text-left py-1 pr-2 font-semibold text-ink">Purpose</th>
-                                        <th class="text-left py-1 font-semibold text-ink">Duration</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="border-b border-gray-100">
-                                        <td class="py-1 pr-2">Campaigns</td>
-                                        <td class="py-1 pr-2 font-semibold">Collaboration</td>
-                                        <td class="py-1 pr-2">Discount rules alignment</td>
-                                        <td class="py-1 muted">~2 sprints</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-1 pr-2">Platform</td>
-                                        <td class="py-1 pr-2 font-semibold">X-as-a-Service</td>
-                                        <td class="py-1 pr-2">Observability & deploy</td>
-                                        <td class="py-1 muted">Ongoing</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="panel p-6" style="border-top:3px solid #0d9488;">
+                        <div class="mini-label mb-3">2. Synchronizing ACL</div>
+                        <ul class="space-y-3" style="list-style:none;padding:0;margin:0;">
+                            <li class="stat-line"><span class="dot"></span><span class="text-sm">Bubble owns local state</span></li>
+                            <li class="stat-line"><span class="dot"></span><span class="text-sm">Async translation</span></li>
+                            <li class="stat-line"><span class="dot"></span><span class="text-sm">Freshness SLA</span></li>
+                        </ul>
                     </div>
+                    <div class="panel p-6" style="border-top:3px solid #8b5cf6;">
+                        <div class="mini-label mb-3" style="color:#6d28d9;">3. Open-host Service over ACL</div>
+                        <ul class="space-y-3" style="list-style:none;padding:0;margin:0;">
+                            <li class="stat-line"><span class="dot" style="background:#8b5cf6;"></span><span class="text-sm">Expose useful legacy assets</span></li>
+                            <li class="stat-line"><span class="dot" style="background:#8b5cf6;"></span><span class="text-sm">Stable protocol</span></li>
+                            <li class="stat-line"><span class="dot" style="background:#8b5cf6;"></span><span class="text-sm">Consumers avoid legacy internals</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ EXPANDING THE BUBBLE ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">Expanding the <span>bubble</span></h2>
+            </div>
+            <div class="slide-body">
+                <div>
+                    <svg viewBox="0 0 1100 285" class="w-full h-auto">
+                        <defs>
+                            <marker id="expandArr" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                                <polygon points="0 0,7 2.5,0 5" fill="#0d9488"/>
+                            </marker>
+                        </defs>
+                        <rect x="15" y="38" width="280" height="195" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4"/>
+                        <text x="155" y="64" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">Legacy Monolith</text>
+                        <rect x="115" y="88" width="155" height="115" rx="10" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="6 3"/>
+                        <text x="192" y="116" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#6d28d9" text-anchor="middle">Pricing</text>
+                        <text x="192" y="136" font-family="Inter,sans-serif" font-size="10" fill="#8b5cf6" text-anchor="middle">Bubble</text>
+                        <text x="192" y="162" font-family="Inter,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">B2B rules</text>
+                        <text x="328" y="148" font-family="Inter,sans-serif" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="700">&#8594;</text>
+                        <rect x="375" y="28" width="320" height="215" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 4"/>
+                        <text x="535" y="54" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">Legacy Monolith</text>
+                        <rect x="430" y="75" width="215" height="145" rx="10" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2.5" stroke-dasharray="8 4"/>
+                        <text x="537" y="104" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#6d28d9" text-anchor="middle">Pricing</text>
+                        <text x="537" y="124" font-family="Inter,sans-serif" font-size="10" fill="#8b5cf6" text-anchor="middle">Bubble</text>
+                        <text x="537" y="150" font-family="Inter,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">B2B · market segments</text>
+                        <text x="537" y="168" font-family="Inter,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">discount engine</text>
+                        <text x="728" y="148" font-family="Inter,sans-serif" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="700">&#8594;</text>
+                        <rect x="775" y="28" width="300" height="215" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+                        <text x="925" y="54" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#94a3b8" text-anchor="middle">Legacy (reduced)</text>
+                        <rect x="785" y="75" width="280" height="145" rx="10" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2.5"/>
+                        <text x="925" y="108" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#6d28d9" text-anchor="middle">Pricing Context</text>
+                        <text x="925" y="132" font-family="Inter,sans-serif" font-size="9" fill="#8b5cf6" text-anchor="middle">owns state · owns rules</text>
+                        <text x="925" y="152" font-family="Inter,sans-serif" font-size="9" fill="#8b5cf6" text-anchor="middle">independent deploy</text>
+                        <text x="155" y="272" font-family="Inter,sans-serif" font-size="11" fill="#475569" text-anchor="middle">1. Small bubble</text>
+                        <text x="535" y="272" font-family="Inter,sans-serif" font-size="11" fill="#475569" text-anchor="middle">2. Wider bubble</text>
+                        <text x="925" y="272" font-family="Inter,sans-serif" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="600">3. Owns responsibilities</text>
+                    </svg>
+                    <p class="text-center text-lg font-semibold text-ink mt-3">Move responsibilities, not chaos.</p>
+                    <p class="text-center text-sm muted mt-1">Only bring in data you actually use.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ THE POINT IS NOT REPLACEMENT ═══════════════════════ -->
+        <section>
+            <div class="slide-header">
+                <h2 class="slide-title">The point is not <span>replacement</span></h2>
+            </div>
+            <div class="slide-body">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="panel p-10 mb-8" style="border-left:6px solid #0d9488;">
+                        <p class="text-3xl font-semibold text-ink leading-relaxed">"If legacy is stable, non-core, and safely exposed —<br><span class="text-accent-600">let it be.</span>"</p>
+                    </div>
+                    <p class="text-xl muted">Legacy loses power when the next change becomes cheaper, safer, and more local.</p>
                 </div>
             </div>
         </section>
